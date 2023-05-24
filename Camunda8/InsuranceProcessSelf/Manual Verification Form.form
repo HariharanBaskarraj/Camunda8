@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "text": "# Manual Verification \n# Report",
+      "type": "text",
+      "layout": {
+        "row": "Row_11u7wjd",
+        "columns": null
+      },
+      "id": "Field_11xjji0"
+    },
+    {
+      "values": [
+        {
+          "label": "Approved",
+          "value": "Approved"
+        },
+        {
+          "label": "Rejected",
+          "value": "Rejected"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_11s56hd",
+        "columns": null
+      },
+      "id": "Field_0zo9abb",
+      "key": "verification",
+      "label": "Do you approve the claim authenticity?",
+      "properties": {
+        "note": "value"
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Button",
+      "type": "button",
+      "layout": {
+        "row": "Row_05fpcci",
+        "columns": null
+      },
+      "id": "Field_0lbckav",
+      "key": "field_1fmn3oo"
+    }
+  ],
+  "type": "default",
+  "id": "Manual_Verification_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}

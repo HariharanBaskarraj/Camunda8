@@ -1,0 +1,59 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "SUV",
+          "value": "SUV"
+        },
+        {
+          "label": "Budget",
+          "value": "Budget"
+        }
+      ],
+      "label": "Select Car Type",
+      "type": "select",
+      "id": "Field_0bp7ncu",
+      "key": "carType",
+      "defaultValue": "<none>",
+      "disabled": false
+    },
+    {
+      "values": [
+        {
+          "label": "Red",
+          "value": "red"
+        },
+        {
+          "label": "Yellow",
+          "value": "yellow"
+        },
+        {
+          "label": "Green",
+          "value": "green"
+        },
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "White",
+          "value": "white"
+        }
+      ],
+      "label": "Select Car Colour",
+      "type": "select",
+      "id": "Field_01nqtd9",
+      "key": "carColour"
+    }
+  ],
+  "type": "default",
+  "id": "Form_CarModelSelection",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}

@@ -1,0 +1,111 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Vegetarian",
+          "value": "Veg"
+        },
+        {
+          "label": "Non - Vegetarian",
+          "value": "Non Veg"
+        },
+        {
+          "label": "Both",
+          "value": "Combined"
+        }
+      ],
+      "label": "Select Food Choice",
+      "type": "select",
+      "layout": {
+        "row": "Row_05mx42e",
+        "columns": null
+      },
+      "id": "Field_07dt165",
+      "key": "foodChoice",
+      "validate": {
+        "required": false
+      },
+      "properties": {}
+    },
+    {
+      "values": [
+        {
+          "label": "Dosa",
+          "value": "Dosa"
+        },
+        {
+          "label": "Chapathi",
+          "value": "Chapathi"
+        },
+        {
+          "label": "Butter Naan",
+          "value": "Butter Naan"
+        },
+        {
+          "label": "Paneer Butter Masala",
+          "value": "Paneer Butter Masala"
+        },
+        {
+          "label": "Chili Baby Corn",
+          "value": "Chili Baby Corn"
+        }
+      ],
+      "label": "Select Veg Food Choices",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0wcxcli",
+        "columns": null
+      },
+      "id": "Field_0qwg5t8",
+      "key": "vegFoods",
+      "conditional": {
+        "hide": "=foodChoice = \"Non Veg\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Chicken 65",
+          "value": "Chicken 65"
+        },
+        {
+          "label": "Malai Chicken Tikka",
+          "value": "Malai Chicken Tikka"
+        },
+        {
+          "label": "Chicken Biryani",
+          "value": "Chicken Biryani"
+        },
+        {
+          "label": "Mutton Chukka",
+          "value": "Mutton Chukka"
+        },
+        {
+          "label": "Honey Chilli Chicken",
+          "value": "Honey Chilli Chicken"
+        }
+      ],
+      "label": "Select Non-Veg Food Choices",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0wcxcli",
+        "columns": null
+      },
+      "id": "Field_0imfd68",
+      "key": "nonvegFoods",
+      "conditional": {
+        "hide": "=foodChoice = \"Veg\""
+      }
+    }
+  ],
+  "type": "default",
+  "id": "OrderConditionalForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.10.0"
+  },
+  "schemaVersion": 8
+}

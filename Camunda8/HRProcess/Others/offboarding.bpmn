@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1sofhj4" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="Process_1ylxec8" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_05taykd</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_05taykd" sourceRef="StartEvent_1" targetRef="Activity_1cgeou2" />
+    <bpmn:userTask id="Activity_1cgeou2" name="Register the contract end date in calendar">
+      <bpmn:incoming>Flow_05taykd</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cmrvb4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0cmrvb4" sourceRef="Activity_1cgeou2" targetRef="Activity_1lliloa" />
+    <bpmn:manualTask id="Activity_1lliloa" name="Schedule the exit interview">
+      <bpmn:incoming>Flow_0cmrvb4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0maz10b</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:sequenceFlow id="Flow_0maz10b" sourceRef="Activity_1lliloa" targetRef="Activity_10k4tsg" />
+    <bpmn:sequenceFlow id="Flow_04ths4b" sourceRef="Activity_10k4tsg" targetRef="Activity_0litx7a" />
+    <bpmn:sequenceFlow id="Flow_0smke2q" sourceRef="Activity_0litx7a" targetRef="Activity_0g846ji" />
+    <bpmn:sequenceFlow id="Flow_1xkchh3" sourceRef="Activity_0g846ji" targetRef="Activity_1bgqqwl" />
+    <bpmn:endEvent id="Event_1xzqw8v" name="Offboarding done">
+      <bpmn:incoming>Flow_1ye9ay8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1ye9ay8" sourceRef="Activity_1bgqqwl" targetRef="Event_1xzqw8v" />
+    <bpmn:manualTask id="Activity_1bgqqwl" name="Inform respective teams to reclaim the assets">
+      <bpmn:incoming>Flow_1xkchh3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ye9ay8</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="Activity_0g846ji" name="Send notification to submit the assets">
+      <bpmn:incoming>Flow_0smke2q</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xkchh3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0litx7a" name="Sync Time and Attendance to end on the leaving date">
+      <bpmn:incoming>Flow_04ths4b</bpmn:incoming>
+      <bpmn:outgoing>Flow_0smke2q</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="Activity_10k4tsg" name="Generate end-of-contract document">
+      <bpmn:incoming>Flow_0maz10b</bpmn:incoming>
+      <bpmn:outgoing>Flow_04ths4b</bpmn:outgoing>
+    </bpmn:manualTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1ylxec8">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pcn110_di" bpmnElement="Activity_1cgeou2">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kb5bo9_di" bpmnElement="Activity_1lliloa">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1xzqw8v_di" bpmnElement="Event_1xzqw8v">
+        <dc:Bounds x="1232" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1208" y="142" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16tvb0h_di" bpmnElement="Activity_1bgqqwl">
+        <dc:Bounds x="1070" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pvky3v_di" bpmnElement="Activity_0g846ji">
+        <dc:Bounds x="910" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1b96wy2_di" bpmnElement="Activity_0litx7a">
+        <dc:Bounds x="750" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0seoat4_di" bpmnElement="Activity_10k4tsg">
+        <dc:Bounds x="590" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_05taykd_di" bpmnElement="Flow_05taykd">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cmrvb4_di" bpmnElement="Flow_0cmrvb4">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0maz10b_di" bpmnElement="Flow_0maz10b">
+        <di:waypoint x="530" y="117" />
+        <di:waypoint x="590" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04ths4b_di" bpmnElement="Flow_04ths4b">
+        <di:waypoint x="690" y="117" />
+        <di:waypoint x="750" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0smke2q_di" bpmnElement="Flow_0smke2q">
+        <di:waypoint x="850" y="117" />
+        <di:waypoint x="910" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xkchh3_di" bpmnElement="Flow_1xkchh3">
+        <di:waypoint x="1010" y="117" />
+        <di:waypoint x="1070" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ye9ay8_di" bpmnElement="Flow_1ye9ay8">
+        <di:waypoint x="1170" y="117" />
+        <di:waypoint x="1232" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

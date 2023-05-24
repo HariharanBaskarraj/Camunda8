@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="io.camunda.zeebe.spring.client.EnableZeebeClient"/>
+    <fullyQualifiedTypeName name="io.camunda.zeebe.spring.client.annotation.Deployment"/>
+    <fullyQualifiedTypeName name="io.camunda.zeebe.client.api.response.ActivatedJob"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+</qualifiedTypeNameHistroy>

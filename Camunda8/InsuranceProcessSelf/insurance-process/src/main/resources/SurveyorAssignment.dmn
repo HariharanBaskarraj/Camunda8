@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_SurveyorAssignment" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <decision id="Decision_SurveyorAssignment" name="Auto Assignment Decision">
+    <decisionTable id="DecisionTable_1b2v7a7">
+      <input id="Input_1" label="Vehicle Type" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>vehicleType</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Surveyor ID" name="surveyorId" typeRef="number" />
+      <rule id="DecisionRule_1qtdixd">
+        <inputEntry id="UnaryTests_1q4vcqj">
+          <text>"Motorbike"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pnbl0a">
+          <text>201</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0u2ey7l">
+        <inputEntry id="UnaryTests_1csct6f">
+          <text>"Car"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1z0m5k0">
+          <text>202</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xvki34">
+        <inputEntry id="UnaryTests_00kdb90">
+          <text>"Lorry"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1atyl0n">
+          <text>203</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uxn9u9">
+        <inputEntry id="UnaryTests_0kh9elo">
+          <text>"Bus"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ryo5zb">
+          <text>204</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02yilk5">
+        <inputEntry id="UnaryTests_1t5h4sn">
+          <text>"Auto"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xxiase">
+          <text>205</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_SurveyorAssignment">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

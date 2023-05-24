@@ -1,0 +1,123 @@
+package com.preboarding.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+public class EmployeeDetails {
+
+	@Id
+	@GeneratedValue(generator = "employee_gen", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "employee_gen", sequenceName = "employee_seq", initialValue = 101, allocationSize = 1)
+	private Integer employeeId;
+	private String panNumber;
+	private String passportNumber;
+	private String passportExpiry;
+	private String qualification;
+	private String college;
+	private String accountNumber;
+	private String bankName;
+	private String ifscCode;
+
+	public EmployeeDetails() {
+		super();
+	}
+
+	public EmployeeDetails(String panNumber, String passportNumber, String passportExpiry,
+			String qualification, String college, String accountNumber, String bankName, String ifscCode) {
+		super();
+		this.panNumber = panNumber;
+		this.passportNumber = passportNumber;
+		this.passportExpiry = passportExpiry;
+		this.qualification = qualification;
+		this.college = college;
+		this.accountNumber = accountNumber;
+		this.bankName = bankName;
+		this.ifscCode = ifscCode;
+	}
+
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getPanNumber() {
+		return panNumber;
+	}
+
+	public void setPanNumber(String panNumber) {
+		this.panNumber = panNumber;
+	}
+
+	public String getPassportNumber() {
+		return passportNumber;
+	}
+
+	public void setPassportNumber(String passportNumber) {
+		this.passportNumber = passportNumber;
+	}
+
+	public String getPassportExpiry() {
+		return passportExpiry;
+	}
+
+	public void setPassportExpiry(String passportExpiry) {
+		this.passportExpiry = passportExpiry;
+	}
+
+	public String getQualification() {
+		return qualification;
+	}
+
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
+	}
+
+	public String getCollege() {
+		return college;
+	}
+
+	public void setCollege(String college) {
+		this.college = college;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getBankName() {
+		return bankName;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public String getIfscCode() {
+		return ifscCode;
+	}
+
+	public void setIfscCode(String ifscCode) {
+		this.ifscCode = ifscCode;
+	}
+
+
+	@Override
+	public String toString() {
+		return "EmployeeDetails [employeeId=" + employeeId + ", panNumber=" + panNumber + ", passportNumber="
+				+ passportNumber + ", passportExpiry=" + passportExpiry + ", qualification=" + qualification
+				+ ", college=" + college + ", accountNumber=" + accountNumber + ", bankName=" + bankName + ", ifscCode="
+				+ ifscCode +"]";
+	}
+
+}

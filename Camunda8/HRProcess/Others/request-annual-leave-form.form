@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "text": "# Annual Leave Request\n\nPlease try to submit your application **atleast one month** before the desired start date.",
+      "type": "text",
+      "id": "Field_0siozhe"
+    },
+    {
+      "label": "Employee ID",
+      "type": "textfield",
+      "id": "Field_1b2lz1l",
+      "key": "employeeId"
+    },
+    {
+      "label": "Start Date",
+      "type": "textfield",
+      "id": "Field_13hsb3u",
+      "key": "startDate",
+      "description": "Format - DD/MM/YYYY"
+    },
+    {
+      "label": "End Date",
+      "type": "textfield",
+      "id": "Field_1sd56fv",
+      "key": "endDate",
+      "description": "Format - DD/MM/YYYY"
+    },
+    {
+      "values": [
+        {
+          "label": "Paid",
+          "value": "paid"
+        },
+        {
+          "label": "Unpaid",
+          "value": "unpaid"
+        }
+      ],
+      "label": "What type of leave is this?",
+      "type": "radio",
+      "id": "Field_0z3njt2",
+      "key": "leaveType"
+    },
+    {
+      "label": "Comment",
+      "type": "textfield",
+      "id": "Field_0gppn5p",
+      "key": "comment"
+    }
+  ],
+  "schemaVersion": 7,
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "type": "default",
+  "id": "Form_RequestAnnualLeave",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}

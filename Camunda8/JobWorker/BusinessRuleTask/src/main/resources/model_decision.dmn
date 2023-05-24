@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_ModelSelection" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <decision id="Decision_ModelSelection" name="Select Car Model">
+    <decisionTable id="DecisionTable_0gojti8" hitPolicy="FIRST">
+      <input id="Input_1" label="Car Type">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>carType</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1jj1jxn" label="Car Colour">
+        <inputExpression id="LiteralExpression_0ab8uh5" typeRef="string">
+          <text>carColour</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Availability" name="availability" typeRef="string" />
+      <rule id="DecisionRule_14ul4lu">
+        <inputEntry id="UnaryTests_03jx80m">
+          <text>"SUV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19yv3jv">
+          <text>"red"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1osjl0g">
+          <text>"Available"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_183som0">
+        <inputEntry id="UnaryTests_1tu2w2l">
+          <text>"SUV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kjt8vh">
+          <text>"yellow"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12fxwvn">
+          <text>"Available"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wd0yie">
+        <inputEntry id="UnaryTests_19dgadz">
+          <text>"Budget"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wfhacd">
+          <text>"green"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dd01rj">
+          <text>"Available"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rt2f1r">
+        <inputEntry id="UnaryTests_1rmtv5i">
+          <text>"Budget"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oz8m7r">
+          <text>"black"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1acgs92">
+          <text>"Available"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pxd6ow">
+        <inputEntry id="UnaryTests_1ntyt7h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h9kvvx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01hm4gy">
+          <text>"Not Available"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_ModelSelection">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

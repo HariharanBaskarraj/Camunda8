@@ -1,0 +1,762 @@
+{
+  "components": [
+    {
+      "subtype": "datetime",
+      "dateLabel": "Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_08rm7x4",
+        "columns": null
+      },
+      "id": "Field_0qz9fsc",
+      "key": "incidentDateTime",
+      "timeLabel": "Time",
+      "timeSerializingFormat": "utc_offset",
+      "timeInterval": 30,
+      "description": "Date and Time of the incident",
+      "disabled": false,
+      "use24h": false,
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0gbg7x3",
+        "columns": null
+      },
+      "id": "Field_0d018ex",
+      "key": "reportingPersonFirstName",
+      "description": "Reporting Party Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0gbg7x3",
+        "columns": null
+      },
+      "id": "Field_1ulj06h",
+      "key": "reportingPersonLastName"
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_09xv8ro",
+        "columns": null
+      },
+      "id": "Field_0x60i8i",
+      "key": "reportingPersonAddress",
+      "description": "Reporting Party Address"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1u50old",
+        "columns": null
+      },
+      "id": "Field_1w0dyh8",
+      "key": "reportingPersonPhoneNumber",
+      "description": "Reporting Party Phone Number"
+    },
+    {
+      "values": [
+        {
+          "label": "Insured",
+          "value": "insured"
+        },
+        {
+          "label": "Uninsured",
+          "value": "uninsured"
+        }
+      ],
+      "label": "Vehicle Owner Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0bx552n",
+        "columns": null
+      },
+      "id": "Field_0z0c7pb",
+      "key": "vehicleOwnerType"
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0vhlhhl",
+      "key": "vehicleOwnerFirstName",
+      "description": "Vehicle Owner Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0jgqveb",
+      "key": "vehicleOwnerLastName"
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0rnmm4t",
+        "columns": null
+      },
+      "id": "Field_10sks55",
+      "key": "vehicleOwnerAddress",
+      "description": "Vehicle Owner Address"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Birth Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0uqsutf",
+        "columns": null
+      },
+      "id": "Field_1txn7k6",
+      "key": "vehicleOwnerBirthDate",
+      "description": "Vehicle Owner Birth Date"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_16v5ckb",
+        "columns": null
+      },
+      "id": "Field_04xbj8n",
+      "key": "vehicleOwnerPhoneNumber",
+      "description": "Vehicle Owner Phone Number"
+    },
+    {
+      "label": "Policy Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1c24y6l",
+        "columns": null
+      },
+      "id": "Field_15iimd0",
+      "key": "policyNumber"
+    },
+    {
+      "label": "Accident Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1p42xkp",
+        "columns": null
+      },
+      "id": "Field_1x8baum",
+      "key": "accidentLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Police Report",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0tfrq8v",
+        "columns": null
+      },
+      "id": "Field_1cq6yp4",
+      "key": "policeReport",
+      "defaultValue": "<none>"
+    },
+    {
+      "label": "Police Report Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0j89vjo",
+        "columns": null
+      },
+      "id": "Field_1kmh9xw",
+      "key": "policeReportNumber",
+      "conditional": {
+        "hide": "=policeReport = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Witnesses",
+      "type": "radio",
+      "layout": {
+        "row": "Row_14uz0ku",
+        "columns": null
+      },
+      "id": "Field_12zxmf8",
+      "key": "witness"
+    },
+    {
+      "label": "Witness Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_08eec7e",
+        "columns": null
+      },
+      "id": "Field_1o36epv",
+      "key": "witnessName",
+      "conditional": {
+        "hide": "=witness = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Motorbike",
+          "value": "Motorbike"
+        },
+        {
+          "label": "Car",
+          "value": "Car"
+        },
+        {
+          "label": "Lorry",
+          "value": "Lorry"
+        },
+        {
+          "label": "Bus",
+          "value": "Bus"
+        },
+        {
+          "label": "Auto Rickshaw",
+          "value": "Auto"
+        }
+      ],
+      "label": "Vehicle Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0kwgzoi",
+        "columns": null
+      },
+      "id": "Field_1s2g9u2",
+      "key": "vehicleType"
+    },
+    {
+      "values": [
+        {
+          "label": "Hit from Behind",
+          "value": "Hit from Behind"
+        },
+        {
+          "label": "Left Turn",
+          "value": "Left Turn"
+        },
+        {
+          "label": "Right Turn",
+          "value": "Right Turn"
+        },
+        {
+          "label": "Side Swipe",
+          "value": "Side Swipe"
+        },
+        {
+          "label": "Fixed Object",
+          "value": "Fixed Object"
+        },
+        {
+          "label": "Burn",
+          "value": "Burn"
+        },
+        {
+          "label": "Others ",
+          "value": "Others"
+        }
+      ],
+      "label": "Type of Accident",
+      "type": "select",
+      "layout": {
+        "row": "Row_1fzlvl3",
+        "columns": null
+      },
+      "id": "Field_10y16i9",
+      "key": "accidentType",
+      "searchable": false
+    },
+    {
+      "values": [
+        {
+          "label": "Light",
+          "value": "Light"
+        },
+        {
+          "label": "Moderate",
+          "value": "Moderate"
+        },
+        {
+          "label": "Heavy",
+          "value": "Heavy"
+        }
+      ],
+      "label": "Traffic Conditions",
+      "type": "select",
+      "layout": {
+        "row": "Row_0e6m0kr",
+        "columns": null
+      },
+      "id": "Field_1fwobfj",
+      "key": "trafficCoditions"
+    },
+    {
+      "values": [
+        {
+          "label": "Daylight",
+          "value": "Daylight"
+        },
+        {
+          "label": "Darkness",
+          "value": "Darkness"
+        },
+        {
+          "label": "Dusk / Dawn",
+          "value": "Dusk / Dawn"
+        }
+      ],
+      "label": "Light Conditions",
+      "type": "select",
+      "layout": {
+        "row": "Row_0b7qdsx",
+        "columns": null
+      },
+      "id": "Field_1k4wx7h",
+      "key": "lightConditions"
+    },
+    {
+      "values": [
+        {
+          "label": "Clear",
+          "value": "Clear"
+        },
+        {
+          "label": "Cloudy",
+          "value": "Cloudy"
+        },
+        {
+          "label": "Rain",
+          "value": "Rain"
+        },
+        {
+          "label": "Snow",
+          "value": "Snow"
+        },
+        {
+          "label": "Hail",
+          "value": "Hail"
+        },
+        {
+          "label": "Fog",
+          "value": "Fog"
+        }
+      ],
+      "label": "Traffic Weather",
+      "type": "select",
+      "layout": {
+        "row": "Row_1dfx3vk",
+        "columns": null
+      },
+      "id": "Field_01938fm",
+      "key": "trafficWeather"
+    },
+    {
+      "values": [
+        {
+          "label": "Straight",
+          "value": "Straight"
+        },
+        {
+          "label": "Curve",
+          "value": "Curve"
+        },
+        {
+          "label": "Hillcrest",
+          "value": "Hillcrest"
+        },
+        {
+          "label": "Adjacent Parked Lanes",
+          "value": "Adjacent Parked Lanes"
+        }
+      ],
+      "label": "Roadway Character",
+      "type": "select",
+      "layout": {
+        "row": "Row_0vxx92r",
+        "columns": null
+      },
+      "id": "Field_15164va",
+      "key": "roadwayCharacter"
+    },
+    {
+      "values": [
+        {
+          "label": "Dry",
+          "value": "Dry"
+        },
+        {
+          "label": "Wet",
+          "value": "Wet"
+        },
+        {
+          "label": "Icy",
+          "value": "Icy"
+        },
+        {
+          "label": "Snow",
+          "value": "Snow"
+        },
+        {
+          "label": "Muddy",
+          "value": "Muddy"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "label": "Road Surface",
+      "type": "select",
+      "layout": {
+        "row": "Row_02llhk7",
+        "columns": null
+      },
+      "id": "Field_1sq44hy",
+      "key": "roadSurface"
+    },
+    {
+      "values": [
+        {
+          "label": "20",
+          "value": "20"
+        },
+        {
+          "label": "30",
+          "value": "30"
+        },
+        {
+          "label": "40",
+          "value": "40"
+        },
+        {
+          "label": "50",
+          "value": "50"
+        },
+        {
+          "label": "60",
+          "value": "60"
+        },
+        {
+          "label": "70",
+          "value": "70"
+        },
+        {
+          "label": "80",
+          "value": "80"
+        },
+        {
+          "label": "90",
+          "value": "90"
+        }
+      ],
+      "label": "Speed Limit",
+      "type": "select",
+      "layout": {
+        "row": "Row_1foz0yx",
+        "columns": null
+      },
+      "id": "Field_0s87yp2",
+      "key": "speedLimit",
+      "description": "In KMPH"
+    },
+    {
+      "values": [
+        {
+          "label": "Braked",
+          "value": "Braked"
+        },
+        {
+          "label": "Served to Left",
+          "value": "Served to Left"
+        },
+        {
+          "label": "Served to Right",
+          "value": "Served to Right"
+        },
+        {
+          "label": "Vehicle stopped at light",
+          "value": "Vehicle stopped at light"
+        },
+        {
+          "label": "Vehicle Parked",
+          "value": "Vehicle Parked"
+        },
+        {
+          "label": "Sped Up",
+          "value": "Sped Up"
+        },
+        {
+          "label": "Slowed Down",
+          "value": "Slowed Down"
+        },
+        {
+          "label": "Horn Honked",
+          "value": "Horn Honked"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "label": "Evasive Action Taken",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_1vcbkhu",
+        "columns": null
+      },
+      "id": "Field_1bawx4c",
+      "key": "evasiveActions"
+    },
+    {
+      "label": "Describe what happened",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0607z00",
+        "columns": null
+      },
+      "id": "Field_0w512lx",
+      "key": "description"
+    },
+    {
+      "label": "License Plate",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_00222si",
+        "columns": null
+      },
+      "id": "Field_1xfynei",
+      "key": "licensePlate"
+    },
+    {
+      "label": "Vehicle Make",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1hm4e6f",
+        "columns": null
+      },
+      "id": "Field_1i8pyxv",
+      "key": "vehicleMake"
+    },
+    {
+      "label": "Vehicle Model",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0pot8iy",
+        "columns": null
+      },
+      "id": "Field_1rv8kia",
+      "key": "vehicleModel"
+    },
+    {
+      "values": [
+        {
+          "label": "Front",
+          "value": "Front"
+        },
+        {
+          "label": "Rear",
+          "value": "Rear"
+        },
+        {
+          "label": "Left Side",
+          "value": "Left Side"
+        },
+        {
+          "label": "Right Side",
+          "value": "Right Side"
+        }
+      ],
+      "label": "Point of Impact",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qsuhsm",
+        "columns": null
+      },
+      "id": "Field_0x55z1q",
+      "key": "pointOfImpact"
+    },
+    {
+      "label": "Vehicle Color",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0iqa1fk",
+        "columns": null
+      },
+      "id": "Field_1olmzqy",
+      "key": "color",
+      "appearance": {}
+    },
+    {
+      "label": "Vehicle Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ewjrp8",
+        "columns": null
+      },
+      "id": "Field_1cmrr9c",
+      "key": "vehicleLocation"
+    },
+    {
+      "label": "Location Contact Person",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1i4x81o",
+        "columns": null
+      },
+      "id": "Field_1fikv3d",
+      "key": "locationContactName"
+    },
+    {
+      "label": "Location Contact Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1coa0z5",
+        "columns": null
+      },
+      "id": "Field_099krlz",
+      "key": "locationContactNumber"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Permission to Move",
+      "type": "select",
+      "layout": {
+        "row": "Row_0zkykid",
+        "columns": null
+      },
+      "id": "Field_1bmtrso",
+      "key": "movePermission"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Driveable ??",
+      "type": "select",
+      "layout": {
+        "row": "Row_16g1wgd",
+        "columns": null
+      },
+      "id": "Field_1ukhcoz",
+      "key": "driveCondition"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Today's Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_189ifit",
+        "columns": null
+      },
+      "id": "Field_12wn98w",
+      "key": "todayDate",
+      "disallowPassedDates": true,
+      "properties": {}
+    },
+    {
+      "text": "CLAIM ESTIMATE REPAIR AUTHORIZATION\nAGREEMENT, PERMISSION TO MOVE AND LIMITED POWER OF ATTORNEY\n\nThe Estimate of Repairs will include parts, labor, diagnosis, and applicable taxes; and the initial Estimate may, subject to applicable law and regulations, be conducted on the basis of photographs and descriptions submitted to REPAIR FACILITY electronically before on-site physical inspection by REPAIR FACILITY. I acknowledge that REPAIR FACILITY is not responsible for towing or other costs of delivery of my vehicle to REPAIR FACILITY’s premises. If upon further inspection by REPAIR FACILITY, it becomes apparent that additional parts or labor are reasonably necessary, the initial Estimate of Repairs will be amended and a Written Final Estimate of Repairs will be provided to Owner on request.\n\n \n\nLIMITED POWER OF ATTORNEY: I do hereby appoint REPAIR FACILITY Collision Center as my agent and attorney-in-fact to negotiate on my behalf with my insurance company regarding and repair of the above-referenced vehicle and to handle any and all claim-related matters. I give permission for Iv Auto to pick up my vehicle in the event it is a total loss.  further expressly authorize REPAIR FACILITY to receive, negotiate and apply on my behalf and for my credit in connection with such repairs any and all checks, drafts or bills of exchange issued by my said insurance company in connection with my vehicle, acknowledging that any deductibles and/or betterments above insurance company allowances will be my responsibility for payment to REPAIR FACILITY Collision. This limited power of attorney and agency authorization will remain in effect until revoked by me in writing; and may be relied upon by my insurance company in all of its dealings with REPAIR FACILITY in connection with estimation, claims adjustment and repairs of and to my vehicle.\n\n \n\nOWNER SIGNATURE\n \n\nADDITIONAL TERMS AND CONDITIONS\n\nThank you for choosing REPAIR FACILITY Collision Center (“REPAIR FACILITY”), and for taking the time to review this Agreement. It is our intention to provide you with the best quality service available; and by this form to advise you of the estimation, claims and repair process and to avoid confusion or misunderstanding. Please review the following, and if you have any questions please feel free to ask. We want you to be completely satisfied!\n\nAuthorizations: The repair contract will be between REPAIR FACILITY and the person identified as “Owner” who initially signed the Estimate & Repair Authorization and Agreement. Please note that all updates will only be directed to said Owner; and only said Owner may give REPAIR FACILITY additional authorizations unless said Owner otherwise directs REPAIR FACILITY in writing. When the vehicle is completed, no other Person may pick up the vehicle without prior written approval of release from the contracted Owner.\n\nBody Damage Checklist: Before you leave your vehicle with REPAIR FACILITY for repairs, you must sign or initial a checklist for all damages to your vehicle, including chips, scratches, prior dings, etc. Please note that this is a conditions report and not a list of damages that will be repaired. By signing it, you acknowledge awareness of such items prior to leaving your vehicle for repairs.\n\nPersonal belongings: All customers are asked to remove any and all personal belongings and/or items of value prior to dropping off any vehicle for repairs. REPAIR FACILITY assumes no responsibility for loss or damage of any personal belongings or items of value left in vehicles.\n\nDeductible and Betterment: Many insurance policies and/or claims include a “deductible”–i.e.: an amount of the estimated cost of repairs that will not be paid by the insurance company but must be borne by the insured person. The customer Owner will be responsible for payment of the deductible to REPAIR FACILITY upon completion of repairs. Please do not ask us to \"save\" your deductible, which could result in a decline in repair quality. In addition, sometimes your insurance company will charge or deduct what is called “betterment” or “depreciation” on certain items. If this is the case, you will be responsible for the cost of such betterment upon vehicle completion.\n\nStorage Charges: REPAIR FACILITY will not begin accruing storage charges for a period of seven (7) days from the date the repairs on your vehicle are completed. After seven days, REPAIR FACILITY will charge a storage fee of $         Per Day until the repair bill is fully paid and the vehicle is removed from our premises. If your vehicle is considered a \"Total Loss\" or if for whatever reason the vehicle is not repaired at our facility, an $         per diem storage charge may be assessed from the first day the vehicle was dropped off, until the vehicle is removed from our premises.\n\nLength of repairs: Due to the many variables in each repair process, we regret that REPAIR FACILITY is unable to guarantee a completion date. Supplements, parts, discovery of additional or hidden damages, and many other factors can effect repair times. For these reasons, we can only estimate the time of completion. Some repairs may take longer than the number of days of rental coverage offered by many insurance companies. REPAIR FACILITY assumes no responsibility for rental car cost or additional expenses related to loss of use.\n\nBumper & Plastic Parts: We do our very best to color match between the various components repaired, but REPAIR FACILITY cannot guarantee the color match between plastic panels (i.e. bumpers, mirrors, spoilers, moldings, flares etc.) and the rest of the sheet metal parts as there are many variables that effect the color match of these parts, including differences in substrate, mounting angles, flex additives and differences in surfacers. Please talk with your REPAIR FACILITY representative if you would like more detailed information.\n\nMethod of Payment: If you are going through a Direct Repair Agreement and your insurance authorizes payment for the repairs, the only payment due will be your Deductible and Betterment if applicable. If your insurance company denies the claim for any reason or for all other customer/self- pay repairs, full payment is due upon completion of your vehicle's repairs. No vehicle will be released without full payment; provided however, that we will with your express prior written authorization pursue payment from your insurance company. Acceptable forms of payment include: Insurance check endorsed by all party payees; Local Cashier Check; Cash; and MasterCard or Visa, up to $2000.00 limit. There will be a 3% fee on all transactions over $2000.\n\nSupplements: During the course of repairs, additional or hidden damage not included in the initial Estimate of Repairs or the Final Estimate of Repairs may be found. In such cases, repairs to your vehicle may be stopped until a representative from your insurance company has the opportunity to inspect the additional damage; and an estimate of the additional cost of repairing same has been generated and provided to you and your insurance company. Repairs will not continue until we have written authorization to proceed.\n\nTheft & Vandalism Claims: It is the responsibility of the Owner customer to discuss damage from a theft or vandalism directly with your insurance company. We only repair the damage claimed and adjusted, and are not responsible to repair any damage not acknowledged by the insurer as included in the insurance claim. Theft and vandalism repairs may take longer as they often require special order parts not commonly stocked.\n\nCancellation of Repairs or Total loss: If for any reason your vehicle is not repaired, or if you decide to cancel the authorized repairs the following charges (collectively “cancellation charges”) may apply: $           Pullout fee; $        Per diem storage fee until vehicle is removed from our premises; $        Per hour diagnostic, teardown and repair labor charges for work already completed; restocking fee of up to       % of retail cost of any parts ordered. Such cancellation charges will be due and payable at the time of removal of the vehicle from our premises.",
+      "type": "text",
+      "layout": {
+        "row": "Row_024o3st",
+        "columns": null
+      },
+      "id": "Field_17ttddj"
+    },
+    {
+      "values": [
+        {
+          "label": "I acknowledge that I have read and agree to the terms and conditions set forth above.",
+          "value": "yes"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1sft05g",
+        "columns": null
+      },
+      "id": "Field_195hsdi",
+      "key": "acknowledgement",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "I have read and understand the foregoing agreement",
+          "value": "yes"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1sewjfg",
+        "columns": null
+      },
+      "id": "Field_1u5gm8e",
+      "key": "agreement",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "FNOL_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}

@@ -1,0 +1,50 @@
+{
+  "components": [
+    {
+      "text": "# Choose a dish\nChoose among the following dish options for placing the order",
+      "type": "text",
+      "id": "Field_08pqi42"
+    },
+    {
+      "values": [
+        {
+          "label": "Dosa",
+          "value": "dosa"
+        },
+        {
+          "label": "Idli",
+          "value": "Idli"
+        },
+        {
+          "label": "Poori",
+          "value": "poori"
+        },
+        {
+          "label": "Chapathi",
+          "value": "chapathi"
+        },
+        {
+          "label": "Pongal",
+          "value": "pongal"
+        },
+        {
+          "label": "Vada",
+          "value": "vada"
+        }
+      ],
+      "label": "Checklist",
+      "type": "checklist",
+      "id": "Field_0y30let",
+      "key": "dishOptions"
+    }
+  ],
+  "type": "default",
+  "id": "orderForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}

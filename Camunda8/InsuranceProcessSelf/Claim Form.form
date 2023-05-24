@@ -1,0 +1,356 @@
+{
+  "components": [
+    {
+      "label": "Policy Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_08rm7x4",
+        "columns": null
+      },
+      "id": "Field_15iimd0",
+      "key": "policyNumber"
+    },
+    {
+      "subtype": "datetime",
+      "dateLabel": "Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0qyk3pp",
+        "columns": null
+      },
+      "id": "Field_0qz9fsc",
+      "key": "incidentDateTime",
+      "timeLabel": "Time",
+      "timeSerializingFormat": "utc_offset",
+      "timeInterval": 30,
+      "description": "Date and Time of the incident",
+      "disabled": false,
+      "use24h": false,
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0vhlhhl",
+      "key": "vehicleOwnerFirstName",
+      "description": "Vehicle Owner Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0jgqveb",
+      "key": "vehicleOwnerLastName"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_16v5ckb",
+        "columns": null
+      },
+      "id": "Field_04xbj8n",
+      "key": "vehicleOwnerPhoneNumber",
+      "description": "Vehicle Owner Phone Number"
+    },
+    {
+      "values": [
+        {
+          "label": "Insured",
+          "value": "insured"
+        },
+        {
+          "label": "Uninsured",
+          "value": "uninsured"
+        }
+      ],
+      "label": "Vehicle Owner Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_1uuoc76",
+        "columns": null
+      },
+      "id": "Field_0z0c7pb",
+      "key": "vehicleOwnerType"
+    },
+    {
+      "label": "Surveyor Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1un0f69",
+        "columns": null
+      },
+      "id": "Field_0caxxx9",
+      "key": "surveyorName"
+    },
+    {
+      "label": "Surveyor Mobile Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_145dimd",
+        "columns": null
+      },
+      "id": "Field_0zsgkab",
+      "key": "surveyorMobile"
+    },
+    {
+      "label": "Accident Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1p42xkp",
+        "columns": null
+      },
+      "id": "Field_1x8baum",
+      "key": "accidentLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Police Report",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0tfrq8v",
+        "columns": null
+      },
+      "id": "Field_1cq6yp4",
+      "key": "policeReport",
+      "defaultValue": "<none>"
+    },
+    {
+      "label": "Police Report Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0j89vjo",
+        "columns": null
+      },
+      "id": "Field_1kmh9xw",
+      "key": "policeReportNumber",
+      "conditional": {
+        "hide": "=policeReport = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Motorbike",
+          "value": "motorbike"
+        },
+        {
+          "label": "Car",
+          "value": "car"
+        },
+        {
+          "label": "Lorry",
+          "value": "lorry"
+        },
+        {
+          "label": "Bus",
+          "value": "bus"
+        },
+        {
+          "label": "Auto Rickshaw",
+          "value": "auto"
+        }
+      ],
+      "label": "Vehicle Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0kwgzoi",
+        "columns": null
+      },
+      "id": "Field_1s2g9u2",
+      "key": "vehicleType"
+    },
+    {
+      "values": [
+        {
+          "label": "Hit from Behind",
+          "value": "Hit from Behind"
+        },
+        {
+          "label": "Left Turn",
+          "value": "Left Turn"
+        },
+        {
+          "label": "Right Turn",
+          "value": "Right Turn"
+        },
+        {
+          "label": "Side Swipe",
+          "value": "Side Swipe"
+        },
+        {
+          "label": "Fixed Object",
+          "value": "Fixed Object"
+        },
+        {
+          "label": "Burn",
+          "value": "Burn"
+        },
+        {
+          "label": "Others ",
+          "value": "Others"
+        }
+      ],
+      "label": "Type of Accident",
+      "type": "select",
+      "layout": {
+        "row": "Row_1fzlvl3",
+        "columns": null
+      },
+      "id": "Field_10y16i9",
+      "key": "accidentType",
+      "searchable": false
+    },
+    {
+      "label": "License Plate",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_00222si",
+        "columns": null
+      },
+      "id": "Field_1xfynei",
+      "key": "licensePlate"
+    },
+    {
+      "label": "Vehicle Model",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0pot8iy",
+        "columns": null
+      },
+      "id": "Field_1rv8kia",
+      "key": "vehicleModel"
+    },
+    {
+      "values": [
+        {
+          "label": "Front",
+          "value": "Front"
+        },
+        {
+          "label": "Rear",
+          "value": "Rear"
+        },
+        {
+          "label": "Left Side",
+          "value": "Left Side"
+        },
+        {
+          "label": "Right Side",
+          "value": "Right Side"
+        }
+      ],
+      "label": "Point of Impact",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qsuhsm",
+        "columns": null
+      },
+      "id": "Field_0x55z1q",
+      "key": "pointOfImpact"
+    },
+    {
+      "label": "Vehicle Color",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0iqa1fk",
+        "columns": null
+      },
+      "id": "Field_1olmzqy",
+      "key": "color",
+      "appearance": {}
+    },
+    {
+      "label": "Vehicle Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ewjrp8",
+        "columns": null
+      },
+      "id": "Field_1cmrr9c",
+      "key": "vehicleLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Permission to Move",
+      "type": "select",
+      "layout": {
+        "row": "Row_0zkykid",
+        "columns": null
+      },
+      "id": "Field_1bmtrso",
+      "key": "movePermission"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Driveable ??",
+      "type": "select",
+      "layout": {
+        "row": "Row_16g1wgd",
+        "columns": null
+      },
+      "id": "Field_1ukhcoz",
+      "key": "driveCondition"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Today's Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_189ifit",
+        "columns": null
+      },
+      "id": "Field_12wn98w",
+      "key": "todayDate",
+      "disallowPassedDates": true,
+      "properties": {}
+    }
+  ],
+  "type": "default",
+  "id": "Claim_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}

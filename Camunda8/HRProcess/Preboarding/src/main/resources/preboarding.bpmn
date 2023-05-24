@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1xwjq53" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0" camunda:diagramRelationId="31519204-da8e-4809-9079-9610149508d7">
+  <bpmn:collaboration id="Collaboration_Preboarding">
+    <bpmn:participant id="Participant_01anwe3" name="Preboarding workflow" processRef="preboardingProcess" />
+  </bpmn:collaboration>
+  <bpmn:process id="preboardingProcess" name="Preboarding Process" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_0cvhsoc">{
+  "components": [
+    {
+      "label": "PAN Number",
+      "type": "textfield",
+      "id": "Field_05p4zm6",
+      "key": "panNumber"
+    },
+    {
+      "label": "Passport Numer",
+      "type": "textfield",
+      "id": "Field_1tfl7ct",
+      "key": "passportNumber"
+    },
+    {
+      "label": "Passport Expiry",
+      "type": "textfield",
+      "id": "Field_0d0vfn5",
+      "key": "passportExpiry"
+    },
+    {
+      "label": "Qualification",
+      "type": "textfield",
+      "id": "Field_00vylpm",
+      "key": "qualification"
+    },
+    {
+      "label": "College",
+      "type": "textfield",
+      "id": "Field_1jlp2s3",
+      "key": "college"
+    },
+    {
+      "label": "Bank Account Number",
+      "type": "textfield",
+      "id": "Field_15nyx2o",
+      "key": "accountNumber"
+    },
+    {
+      "label": "Bank Name",
+      "type": "textfield",
+      "id": "Field_0qnw1e4",
+      "key": "bankName"
+    },
+    {
+      "label": "IFSC Code",
+      "type": "textfield",
+      "id": "Field_1ebs2e1",
+      "key": "ifscCode"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "id": "Field_1uu31r2",
+      "key": "field_1k1kzqf"
+    }
+  ],
+  "type": "default",
+  "id": "Form_EmployeeDetails",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_1nfjgp1">{
+  "components": [
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "id": "Field_0zfetb7",
+      "key": "firstName"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "id": "Field_18vb59w",
+      "key": "lastName"
+    },
+    {
+      "label": "Date of Birth",
+      "type": "textfield",
+      "id": "Field_1yegylu",
+      "key": "dob"
+    },
+    {
+      "values": [
+        {
+          "label": "Male",
+          "value": "male"
+        },
+        {
+          "label": "Female",
+          "value": "female"
+        },
+        {
+          "label": "Others",
+          "value": "others"
+        }
+      ],
+      "label": "Gender",
+      "type": "radio",
+      "id": "Field_1qu6h0a",
+      "key": "gender"
+    },
+    {
+      "label": "Blood Group",
+      "type": "textfield",
+      "id": "Field_0ogfq7n",
+      "key": "bloodGroup"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "id": "Field_184v5le",
+      "key": "phoneNumber"
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "id": "Field_073uoa9",
+      "key": "email"
+    },
+    {
+      "label": "Permanent Address",
+      "type": "textfield",
+      "id": "Field_0xb3sb4",
+      "key": "permanentAddress"
+    },
+    {
+      "label": "Address for Communication",
+      "type": "textfield",
+      "id": "Field_19co8an",
+      "key": "currentAddress"
+    },
+    {
+      "label": "Father's Name",
+      "type": "textfield",
+      "id": "Field_1o12hc3",
+      "key": "fatherName"
+    },
+    {
+      "label": "Mother's Name",
+      "type": "textfield",
+      "id": "Field_0zvr8a1",
+      "key": "motherName"
+    },
+    {
+      "label": "Emergency Contact",
+      "type": "textfield",
+      "id": "Field_1w9i7bs",
+      "key": "emergencyContact"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "id": "Field_1w9uc1z",
+      "key": "field_0gpjndz"
+    }
+  ],
+  "type": "default",
+  "id": "Form_PersonalDetails",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_0rus01e">
+      <bpmn:lane id="Lane_0bpc71u" name="HR Executive">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_SavePersonalDetails</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_PreboardingDone</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_Validate</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_NotifyTechTeam</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_SaveEmployeeDetails</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_Recruited</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1igdh63</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0yreqbl</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1rm4pj9</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0zo1i5q" name="New Recruit">
+        <bpmn:flowNodeRef>Activity_1ue577x</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0c9uzo2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_19bxszq</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0hna9dq</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1v1pxho" name="HR Document Generation Team">
+        <bpmn:flowNodeRef>Activity_08vfdwy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1s5nsim</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:sequenceFlow id="Flow_002bhum" sourceRef="StartEvent_1" targetRef="Activity_Recruited" />
+    <bpmn:sequenceFlow id="Flow_0tl8sfb" sourceRef="Activity_Recruited" targetRef="Activity_1igdh63" />
+    <bpmn:sequenceFlow id="Flow_0dvadiw" sourceRef="Activity_1igdh63" targetRef="Activity_1ue577x" />
+    <bpmn:sequenceFlow id="Flow_0df8mec" sourceRef="Activity_1ue577x" targetRef="Activity_SavePersonalDetails" />
+    <bpmn:sequenceFlow id="Flow_150cqil" sourceRef="Activity_19bxszq" targetRef="Activity_SaveEmployeeDetails" />
+    <bpmn:sequenceFlow id="Flow_1ashr7p" sourceRef="Activity_0yreqbl" targetRef="Activity_19bxszq" />
+    <bpmn:sequenceFlow id="Flow_0336iez" sourceRef="Activity_1rm4pj9" targetRef="Activity_1s5nsim" />
+    <bpmn:sequenceFlow id="Flow_16i7kfi" sourceRef="Activity_1s5nsim" targetRef="Activity_08vfdwy" />
+    <bpmn:sequenceFlow id="Flow_0lvm4qg" sourceRef="Activity_08vfdwy" targetRef="Activity_0hna9dq" />
+    <bpmn:sequenceFlow id="Flow_0r1ctob" sourceRef="Activity_0hna9dq" targetRef="Activity_0c9uzo2" />
+    <bpmn:sequenceFlow id="Flow_09zt1vj" sourceRef="Activity_0c9uzo2" targetRef="Activity_Validate" />
+    <bpmn:sequenceFlow id="Flow_06v9tdv" sourceRef="Activity_Validate" targetRef="Activity_NotifyTechTeam" />
+    <bpmn:sequenceFlow id="Flow_13yyinp" sourceRef="Activity_NotifyTechTeam" targetRef="EndEvent_PreboardingDone" />
+    <bpmn:startEvent id="StartEvent_1" name="Candidate eligible">
+      <bpmn:outgoing>Flow_002bhum</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_1ue577x" name="Fill the personal details form">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_1nfjgp1" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dvadiw</bpmn:incoming>
+      <bpmn:outgoing>Flow_0df8mec</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_SavePersonalDetails" name="Save Personal Details in DB">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="savePersonalDetails" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0df8mec</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h64kvd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0h64kvd" sourceRef="Activity_SavePersonalDetails" targetRef="Activity_0yreqbl" />
+    <bpmn:endEvent id="EndEvent_PreboardingDone" name="Preboarding Done">
+      <bpmn:incoming>Flow_13yyinp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_Validate" name="Validate for one final time">
+      <bpmn:incoming>Flow_09zt1vj</bpmn:incoming>
+      <bpmn:outgoing>Flow_06v9tdv</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="Activity_0c9uzo2" name="Send the furnished contract to the HR team">
+      <bpmn:incoming>Flow_0r1ctob</bpmn:incoming>
+      <bpmn:outgoing>Flow_09zt1vj</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_08vfdwy" name="Send the employment contract to sign">
+      <bpmn:incoming>Flow_16i7kfi</bpmn:incoming>
+      <bpmn:outgoing>Flow_0lvm4qg</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:serviceTask id="Activity_NotifyTechTeam" name="Notify the technical team about the new arrival" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Hariharan Baskarraj" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Tech team" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-2163cf229abc4a469eee4fbcb29e4625" target="template.id" />
+          <zeebe:input source="={&#10;  firstName : firstName,&#10;  lastName : lastName,&#10;  email : email,&#10;  phoneNumber : phoneNumber,&#10;  qualification : qualification&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06v9tdv</bpmn:incoming>
+      <bpmn:outgoing>Flow_13yyinp</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_SaveEmployeeDetails" name="Save Employee Details in DB">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="saveEmployeeDetails" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_150cqil</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lh52q2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_19bxszq" name="Fill the employee details form">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_0cvhsoc" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ashr7p</bpmn:incoming>
+      <bpmn:outgoing>Flow_150cqil</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1lh52q2" sourceRef="Activity_SaveEmployeeDetails" targetRef="Activity_1rm4pj9" />
+    <bpmn:manualTask id="Activity_Recruited" name="Mark as &#34;Recruited&#34; in the HR portal.">
+      <bpmn:incoming>Flow_002bhum</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tl8sfb</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_1igdh63" name="Send form to the employee to furnish personal details.">
+      <bpmn:incoming>Flow_0tl8sfb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dvadiw</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_0yreqbl" name="Send the employee details forms">
+      <bpmn:incoming>Flow_0h64kvd</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ashr7p</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_1rm4pj9" name="Transmit the completed file to the HR documents generation">
+      <bpmn:incoming>Flow_1lh52q2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0336iez</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_1s5nsim" name="Generate a new employee file">
+      <bpmn:incoming>Flow_0336iez</bpmn:incoming>
+      <bpmn:outgoing>Flow_16i7kfi</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Activity_0hna9dq" name="Sign the employment contract">
+      <bpmn:incoming>Flow_0lvm4qg</bpmn:incoming>
+      <bpmn:outgoing>Flow_0r1ctob</bpmn:outgoing>
+    </bpmn:manualTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_Preboarding">
+      <bpmndi:BPMNShape id="Participant_01anwe3_di" bpmnElement="Participant_01anwe3" isHorizontal="true">
+        <dc:Bounds x="184" y="86" width="3064" height="484" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1v1pxho_di" bpmnElement="Lane_1v1pxho" isHorizontal="true">
+        <dc:Bounds x="214" y="86" width="3034" height="120" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0zo1i5q_di" bpmnElement="Lane_0zo1i5q" isHorizontal="true">
+        <dc:Bounds x="214" y="374" width="3034" height="196" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0bpc71u_di" bpmnElement="Lane_0bpc71u" isHorizontal="true">
+        <dc:Bounds x="214" y="206" width="3034" height="168" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="287" y="272" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="261" y="315" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_070wwfo_di" bpmnElement="Activity_1ue577x">
+        <dc:Bounds x="695" y="424" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xcgzwd_di" bpmnElement="Activity_SavePersonalDetails">
+        <dc:Bounds x="870" y="250" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01gwij6_di" bpmnElement="EndEvent_PreboardingDone">
+        <dc:Bounds x="3112" y="272" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3085" y="315" width="90" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ikbhla_di" bpmnElement="Activity_Validate">
+        <dc:Bounds x="2670" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_11eq6f9_di" bpmnElement="Activity_0c9uzo2">
+        <dc:Bounds x="2450" y="424" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ll2ly1_di" bpmnElement="Activity_08vfdwy">
+        <dc:Bounds x="2090" y="110" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1dvii0r_di" bpmnElement="Activity_NotifyTechTeam">
+        <dc:Bounds x="2890" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1fl6xz5_di" bpmnElement="Activity_SaveEmployeeDetails">
+        <dc:Bounds x="1480" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zyzjpx_di" bpmnElement="Activity_19bxszq">
+        <dc:Bounds x="1290" y="424" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02xno0u_di" bpmnElement="Activity_Recruited">
+        <dc:Bounds x="375" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0v64dm2_di" bpmnElement="Activity_1igdh63">
+        <dc:Bounds x="535" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wfploz_di" bpmnElement="Activity_0yreqbl">
+        <dc:Bounds x="1060" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05caqr2_di" bpmnElement="Activity_1rm4pj9">
+        <dc:Bounds x="1740" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16elp93_di" bpmnElement="Activity_1s5nsim">
+        <dc:Bounds x="1910" y="110" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1bfxnda_di" bpmnElement="Activity_0hna9dq">
+        <dc:Bounds x="2270" y="424" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_002bhum_di" bpmnElement="Flow_002bhum">
+        <di:waypoint x="323" y="290" />
+        <di:waypoint x="375" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tl8sfb_di" bpmnElement="Flow_0tl8sfb">
+        <di:waypoint x="475" y="290" />
+        <di:waypoint x="535" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dvadiw_di" bpmnElement="Flow_0dvadiw">
+        <di:waypoint x="635" y="290" />
+        <di:waypoint x="665" y="290" />
+        <di:waypoint x="665" y="464" />
+        <di:waypoint x="695" y="464" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0df8mec_di" bpmnElement="Flow_0df8mec">
+        <di:waypoint x="795" y="450" />
+        <di:waypoint x="838" y="450" />
+        <di:waypoint x="838" y="290" />
+        <di:waypoint x="870" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_150cqil_di" bpmnElement="Flow_150cqil">
+        <di:waypoint x="1390" y="444" />
+        <di:waypoint x="1435" y="444" />
+        <di:waypoint x="1435" y="290" />
+        <di:waypoint x="1480" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ashr7p_di" bpmnElement="Flow_1ashr7p">
+        <di:waypoint x="1160" y="290" />
+        <di:waypoint x="1200" y="290" />
+        <di:waypoint x="1200" y="464" />
+        <di:waypoint x="1290" y="464" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0336iez_di" bpmnElement="Flow_0336iez">
+        <di:waypoint x="1840" y="290" />
+        <di:waypoint x="1875" y="290" />
+        <di:waypoint x="1875" y="150" />
+        <di:waypoint x="1910" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16i7kfi_di" bpmnElement="Flow_16i7kfi">
+        <di:waypoint x="2010" y="150" />
+        <di:waypoint x="2090" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0lvm4qg_di" bpmnElement="Flow_0lvm4qg">
+        <di:waypoint x="2190" y="150" />
+        <di:waypoint x="2230" y="150" />
+        <di:waypoint x="2230" y="464" />
+        <di:waypoint x="2270" y="464" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0r1ctob_di" bpmnElement="Flow_0r1ctob">
+        <di:waypoint x="2370" y="464" />
+        <di:waypoint x="2450" y="464" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09zt1vj_di" bpmnElement="Flow_09zt1vj">
+        <di:waypoint x="2550" y="464" />
+        <di:waypoint x="2590" y="464" />
+        <di:waypoint x="2590" y="290" />
+        <di:waypoint x="2670" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06v9tdv_di" bpmnElement="Flow_06v9tdv">
+        <di:waypoint x="2770" y="290" />
+        <di:waypoint x="2890" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13yyinp_di" bpmnElement="Flow_13yyinp">
+        <di:waypoint x="2990" y="290" />
+        <di:waypoint x="3112" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0h64kvd_di" bpmnElement="Flow_0h64kvd">
+        <di:waypoint x="970" y="290" />
+        <di:waypoint x="1060" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lh52q2_di" bpmnElement="Flow_1lh52q2">
+        <di:waypoint x="1580" y="290" />
+        <di:waypoint x="1740" y="290" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

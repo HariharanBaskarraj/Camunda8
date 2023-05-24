@@ -1,0 +1,2221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1pge1rc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.11.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <bpmn:collaboration id="Collaboration_InsuranceProcess">
+    <bpmn:participant id="Participant_Chola" name="Chola Insurance Process" processRef="Process_Insurance" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_Insurance" name="Insurance Process" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_0reo82u">{
+  "components": [
+    {
+      "text": "# Chola Insurance",
+      "type": "text",
+      "layout": {
+        "row": "Row_0d6nuom",
+        "columns": null
+      },
+      "id": "Field_1nk9syb"
+    },
+    {
+      "text": "Please check for any duplicity of the claim with the existing requests and report here.",
+      "type": "text",
+      "layout": {
+        "row": "Row_05g6187",
+        "columns": null
+      },
+      "id": "Field_13zr3pf"
+    },
+    {
+      "values": [
+        {
+          "label": "New Claim request",
+          "value": "no"
+        },
+        {
+          "label": "Duplicate Claim request",
+          "value": "yes"
+        }
+      ],
+      "label": "Duplicity",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0c29ghu",
+        "columns": null
+      },
+      "id": "Field_1kg2ah5",
+      "key": "duplicity"
+    }
+  ],
+  "type": "default",
+  "id": "DuplicityForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.10.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_1mqer8b">{
+  "components": [
+    {
+      "subtype": "datetime",
+      "dateLabel": "Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_08rm7x4",
+        "columns": null
+      },
+      "id": "Field_0qz9fsc",
+      "key": "incidentDateTime",
+      "timeLabel": "Time",
+      "timeSerializingFormat": "utc_offset",
+      "timeInterval": 30,
+      "description": "Date and Time of the incident",
+      "disabled": false,
+      "use24h": false,
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0gbg7x3",
+        "columns": null
+      },
+      "id": "Field_0d018ex",
+      "key": "reportingPersonFirstName",
+      "description": "Reporting Party Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0gbg7x3",
+        "columns": null
+      },
+      "id": "Field_1ulj06h",
+      "key": "reportingPersonLastName"
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_09xv8ro",
+        "columns": null
+      },
+      "id": "Field_0x60i8i",
+      "key": "reportingPersonAddress",
+      "description": "Reporting Party Address"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1u50old",
+        "columns": null
+      },
+      "id": "Field_1w0dyh8",
+      "key": "reportingPersonPhoneNumber",
+      "description": "Reporting Party Phone Number"
+    },
+    {
+      "values": [
+        {
+          "label": "Insured",
+          "value": "insured"
+        },
+        {
+          "label": "Uninsured",
+          "value": "uninsured"
+        }
+      ],
+      "label": "Vehicle Owner Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0bx552n",
+        "columns": null
+      },
+      "id": "Field_0z0c7pb",
+      "key": "vehicleOwnerType"
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0vhlhhl",
+      "key": "vehicleOwnerFirstName",
+      "description": "Vehicle Owner Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0jgqveb",
+      "key": "vehicleOwnerLastName"
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0rnmm4t",
+        "columns": null
+      },
+      "id": "Field_10sks55",
+      "key": "vehicleOwnerAddress",
+      "description": "Vehicle Owner Address"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Birth Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0uqsutf",
+        "columns": null
+      },
+      "id": "Field_1txn7k6",
+      "key": "vehicleOwnerBirthDate",
+      "description": "Vehicle Owner Birth Date"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_16v5ckb",
+        "columns": null
+      },
+      "id": "Field_04xbj8n",
+      "key": "vehicleOwnerPhoneNumber",
+      "description": "Vehicle Owner Phone Number"
+    },
+    {
+      "label": "Policy Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1c24y6l",
+        "columns": null
+      },
+      "id": "Field_15iimd0",
+      "key": "policyNumber"
+    },
+    {
+      "label": "Accident Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1p42xkp",
+        "columns": null
+      },
+      "id": "Field_1x8baum",
+      "key": "accidentLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Police Report",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0tfrq8v",
+        "columns": null
+      },
+      "id": "Field_1cq6yp4",
+      "key": "policeReport",
+      "defaultValue": "&lt;none&gt;"
+    },
+    {
+      "label": "Police Report Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0j89vjo",
+        "columns": null
+      },
+      "id": "Field_1kmh9xw",
+      "key": "policeReportNumber",
+      "conditional": {
+        "hide": "=policeReport = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Witnesses",
+      "type": "radio",
+      "layout": {
+        "row": "Row_14uz0ku",
+        "columns": null
+      },
+      "id": "Field_12zxmf8",
+      "key": "witness"
+    },
+    {
+      "label": "Witness Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_08eec7e",
+        "columns": null
+      },
+      "id": "Field_1o36epv",
+      "key": "witnessName",
+      "conditional": {
+        "hide": "=witness = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Motorbike",
+          "value": "Motorbike"
+        },
+        {
+          "label": "Car",
+          "value": "Car"
+        },
+        {
+          "label": "Lorry",
+          "value": "Lorry"
+        },
+        {
+          "label": "Bus",
+          "value": "Bus"
+        },
+        {
+          "label": "Auto Rickshaw",
+          "value": "Auto"
+        }
+      ],
+      "label": "Vehicle Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0kwgzoi",
+        "columns": null
+      },
+      "id": "Field_1s2g9u2",
+      "key": "vehicleType"
+    },
+    {
+      "values": [
+        {
+          "label": "Hit from Behind",
+          "value": "Hit from Behind"
+        },
+        {
+          "label": "Left Turn",
+          "value": "Left Turn"
+        },
+        {
+          "label": "Right Turn",
+          "value": "Right Turn"
+        },
+        {
+          "label": "Side Swipe",
+          "value": "Side Swipe"
+        },
+        {
+          "label": "Fixed Object",
+          "value": "Fixed Object"
+        },
+        {
+          "label": "Burn",
+          "value": "Burn"
+        },
+        {
+          "label": "Others ",
+          "value": "Others"
+        }
+      ],
+      "label": "Type of Accident",
+      "type": "select",
+      "layout": {
+        "row": "Row_1fzlvl3",
+        "columns": null
+      },
+      "id": "Field_10y16i9",
+      "key": "accidentType",
+      "searchable": false
+    },
+    {
+      "values": [
+        {
+          "label": "Light",
+          "value": "Light"
+        },
+        {
+          "label": "Moderate",
+          "value": "Moderate"
+        },
+        {
+          "label": "Heavy",
+          "value": "Heavy"
+        }
+      ],
+      "label": "Traffic Conditions",
+      "type": "select",
+      "layout": {
+        "row": "Row_0e6m0kr",
+        "columns": null
+      },
+      "id": "Field_1fwobfj",
+      "key": "trafficCoditions"
+    },
+    {
+      "values": [
+        {
+          "label": "Daylight",
+          "value": "Daylight"
+        },
+        {
+          "label": "Darkness",
+          "value": "Darkness"
+        },
+        {
+          "label": "Dusk / Dawn",
+          "value": "Dusk / Dawn"
+        }
+      ],
+      "label": "Light Conditions",
+      "type": "select",
+      "layout": {
+        "row": "Row_0b7qdsx",
+        "columns": null
+      },
+      "id": "Field_1k4wx7h",
+      "key": "lightConditions"
+    },
+    {
+      "values": [
+        {
+          "label": "Clear",
+          "value": "Clear"
+        },
+        {
+          "label": "Cloudy",
+          "value": "Cloudy"
+        },
+        {
+          "label": "Rain",
+          "value": "Rain"
+        },
+        {
+          "label": "Snow",
+          "value": "Snow"
+        },
+        {
+          "label": "Hail",
+          "value": "Hail"
+        },
+        {
+          "label": "Fog",
+          "value": "Fog"
+        }
+      ],
+      "label": "Traffic Weather",
+      "type": "select",
+      "layout": {
+        "row": "Row_1dfx3vk",
+        "columns": null
+      },
+      "id": "Field_01938fm",
+      "key": "trafficWeather"
+    },
+    {
+      "values": [
+        {
+          "label": "Straight",
+          "value": "Straight"
+        },
+        {
+          "label": "Curve",
+          "value": "Curve"
+        },
+        {
+          "label": "Hillcrest",
+          "value": "Hillcrest"
+        },
+        {
+          "label": "Adjacent Parked Lanes",
+          "value": "Adjacent Parked Lanes"
+        }
+      ],
+      "label": "Roadway Character",
+      "type": "select",
+      "layout": {
+        "row": "Row_0vxx92r",
+        "columns": null
+      },
+      "id": "Field_15164va",
+      "key": "roadwayCharacter"
+    },
+    {
+      "values": [
+        {
+          "label": "Dry",
+          "value": "Dry"
+        },
+        {
+          "label": "Wet",
+          "value": "Wet"
+        },
+        {
+          "label": "Icy",
+          "value": "Icy"
+        },
+        {
+          "label": "Snow",
+          "value": "Snow"
+        },
+        {
+          "label": "Muddy",
+          "value": "Muddy"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "label": "Road Surface",
+      "type": "select",
+      "layout": {
+        "row": "Row_02llhk7",
+        "columns": null
+      },
+      "id": "Field_1sq44hy",
+      "key": "roadSurface"
+    },
+    {
+      "values": [
+        {
+          "label": "20",
+          "value": "20"
+        },
+        {
+          "label": "30",
+          "value": "30"
+        },
+        {
+          "label": "40",
+          "value": "40"
+        },
+        {
+          "label": "50",
+          "value": "50"
+        },
+        {
+          "label": "60",
+          "value": "60"
+        },
+        {
+          "label": "70",
+          "value": "70"
+        },
+        {
+          "label": "80",
+          "value": "80"
+        },
+        {
+          "label": "90",
+          "value": "90"
+        }
+      ],
+      "label": "Speed Limit",
+      "type": "select",
+      "layout": {
+        "row": "Row_1foz0yx",
+        "columns": null
+      },
+      "id": "Field_0s87yp2",
+      "key": "speedLimit",
+      "description": "In KMPH"
+    },
+    {
+      "values": [
+        {
+          "label": "Braked",
+          "value": "Braked"
+        },
+        {
+          "label": "Served to Left",
+          "value": "Served to Left"
+        },
+        {
+          "label": "Served to Right",
+          "value": "Served to Right"
+        },
+        {
+          "label": "Vehicle stopped at light",
+          "value": "Vehicle stopped at light"
+        },
+        {
+          "label": "Vehicle Parked",
+          "value": "Vehicle Parked"
+        },
+        {
+          "label": "Sped Up",
+          "value": "Sped Up"
+        },
+        {
+          "label": "Slowed Down",
+          "value": "Slowed Down"
+        },
+        {
+          "label": "Horn Honked",
+          "value": "Horn Honked"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "label": "Evasive Action Taken",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_1vcbkhu",
+        "columns": null
+      },
+      "id": "Field_1bawx4c",
+      "key": "evasiveActions"
+    },
+    {
+      "label": "Describe what happened",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0607z00",
+        "columns": null
+      },
+      "id": "Field_0w512lx",
+      "key": "description"
+    },
+    {
+      "label": "License Plate",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_00222si",
+        "columns": null
+      },
+      "id": "Field_1xfynei",
+      "key": "licensePlate"
+    },
+    {
+      "label": "Vehicle Make",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1hm4e6f",
+        "columns": null
+      },
+      "id": "Field_1i8pyxv",
+      "key": "vehicleMake"
+    },
+    {
+      "label": "Vehicle Model",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0pot8iy",
+        "columns": null
+      },
+      "id": "Field_1rv8kia",
+      "key": "vehicleModel"
+    },
+    {
+      "values": [
+        {
+          "label": "Front",
+          "value": "Front"
+        },
+        {
+          "label": "Rear",
+          "value": "Rear"
+        },
+        {
+          "label": "Left Side",
+          "value": "Left Side"
+        },
+        {
+          "label": "Right Side",
+          "value": "Right Side"
+        }
+      ],
+      "label": "Point of Impact",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qsuhsm",
+        "columns": null
+      },
+      "id": "Field_0x55z1q",
+      "key": "pointOfImpact"
+    },
+    {
+      "label": "Vehicle Color",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0iqa1fk",
+        "columns": null
+      },
+      "id": "Field_1olmzqy",
+      "key": "color",
+      "appearance": {}
+    },
+    {
+      "label": "Vehicle Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ewjrp8",
+        "columns": null
+      },
+      "id": "Field_1cmrr9c",
+      "key": "vehicleLocation"
+    },
+    {
+      "label": "Location Contact Person",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1i4x81o",
+        "columns": null
+      },
+      "id": "Field_1fikv3d",
+      "key": "locationContactName"
+    },
+    {
+      "label": "Location Contact Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1coa0z5",
+        "columns": null
+      },
+      "id": "Field_099krlz",
+      "key": "locationContactNumber"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Permission to Move",
+      "type": "select",
+      "layout": {
+        "row": "Row_0zkykid",
+        "columns": null
+      },
+      "id": "Field_1bmtrso",
+      "key": "movePermission"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Driveable ??",
+      "type": "select",
+      "layout": {
+        "row": "Row_16g1wgd",
+        "columns": null
+      },
+      "id": "Field_1ukhcoz",
+      "key": "driveCondition"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Today's Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_189ifit",
+        "columns": null
+      },
+      "id": "Field_12wn98w",
+      "key": "todayDate",
+      "disallowPassedDates": true,
+      "properties": {}
+    },
+    {
+      "text": "CLAIM ESTIMATE REPAIR AUTHORIZATION\nAGREEMENT, PERMISSION TO MOVE AND LIMITED POWER OF ATTORNEY\n\nThe Estimate of Repairs will include parts, labor, diagnosis, and applicable taxes; and the initial Estimate may, subject to applicable law and regulations, be conducted on the basis of photographs and descriptions submitted to REPAIR FACILITY electronically before on-site physical inspection by REPAIR FACILITY. I acknowledge that REPAIR FACILITY is not responsible for towing or other costs of delivery of my vehicle to REPAIR FACILITY’s premises. If upon further inspection by REPAIR FACILITY, it becomes apparent that additional parts or labor are reasonably necessary, the initial Estimate of Repairs will be amended and a Written Final Estimate of Repairs will be provided to Owner on request.\n\n \n\nLIMITED POWER OF ATTORNEY: I do hereby appoint REPAIR FACILITY Collision Center as my agent and attorney-in-fact to negotiate on my behalf with my insurance company regarding and repair of the above-referenced vehicle and to handle any and all claim-related matters. I give permission for Iv Auto to pick up my vehicle in the event it is a total loss.  further expressly authorize REPAIR FACILITY to receive, negotiate and apply on my behalf and for my credit in connection with such repairs any and all checks, drafts or bills of exchange issued by my said insurance company in connection with my vehicle, acknowledging that any deductibles and/or betterments above insurance company allowances will be my responsibility for payment to REPAIR FACILITY Collision. This limited power of attorney and agency authorization will remain in effect until revoked by me in writing; and may be relied upon by my insurance company in all of its dealings with REPAIR FACILITY in connection with estimation, claims adjustment and repairs of and to my vehicle.\n\n \n\nOWNER SIGNATURE\n \n\nADDITIONAL TERMS AND CONDITIONS\n\nThank you for choosing REPAIR FACILITY Collision Center (“REPAIR FACILITY”), and for taking the time to review this Agreement. It is our intention to provide you with the best quality service available; and by this form to advise you of the estimation, claims and repair process and to avoid confusion or misunderstanding. Please review the following, and if you have any questions please feel free to ask. We want you to be completely satisfied!\n\nAuthorizations: The repair contract will be between REPAIR FACILITY and the person identified as “Owner” who initially signed the Estimate &amp; Repair Authorization and Agreement. Please note that all updates will only be directed to said Owner; and only said Owner may give REPAIR FACILITY additional authorizations unless said Owner otherwise directs REPAIR FACILITY in writing. When the vehicle is completed, no other Person may pick up the vehicle without prior written approval of release from the contracted Owner.\n\nBody Damage Checklist: Before you leave your vehicle with REPAIR FACILITY for repairs, you must sign or initial a checklist for all damages to your vehicle, including chips, scratches, prior dings, etc. Please note that this is a conditions report and not a list of damages that will be repaired. By signing it, you acknowledge awareness of such items prior to leaving your vehicle for repairs.\n\nPersonal belongings: All customers are asked to remove any and all personal belongings and/or items of value prior to dropping off any vehicle for repairs. REPAIR FACILITY assumes no responsibility for loss or damage of any personal belongings or items of value left in vehicles.\n\nDeductible and Betterment: Many insurance policies and/or claims include a “deductible”–i.e.: an amount of the estimated cost of repairs that will not be paid by the insurance company but must be borne by the insured person. The customer Owner will be responsible for payment of the deductible to REPAIR FACILITY upon completion of repairs. Please do not ask us to \"save\" your deductible, which could result in a decline in repair quality. In addition, sometimes your insurance company will charge or deduct what is called “betterment” or “depreciation” on certain items. If this is the case, you will be responsible for the cost of such betterment upon vehicle completion.\n\nStorage Charges: REPAIR FACILITY will not begin accruing storage charges for a period of seven (7) days from the date the repairs on your vehicle are completed. After seven days, REPAIR FACILITY will charge a storage fee of $         Per Day until the repair bill is fully paid and the vehicle is removed from our premises. If your vehicle is considered a \"Total Loss\" or if for whatever reason the vehicle is not repaired at our facility, an $         per diem storage charge may be assessed from the first day the vehicle was dropped off, until the vehicle is removed from our premises.\n\nLength of repairs: Due to the many variables in each repair process, we regret that REPAIR FACILITY is unable to guarantee a completion date. Supplements, parts, discovery of additional or hidden damages, and many other factors can effect repair times. For these reasons, we can only estimate the time of completion. Some repairs may take longer than the number of days of rental coverage offered by many insurance companies. REPAIR FACILITY assumes no responsibility for rental car cost or additional expenses related to loss of use.\n\nBumper &amp; Plastic Parts: We do our very best to color match between the various components repaired, but REPAIR FACILITY cannot guarantee the color match between plastic panels (i.e. bumpers, mirrors, spoilers, moldings, flares etc.) and the rest of the sheet metal parts as there are many variables that effect the color match of these parts, including differences in substrate, mounting angles, flex additives and differences in surfacers. Please talk with your REPAIR FACILITY representative if you would like more detailed information.\n\nMethod of Payment: If you are going through a Direct Repair Agreement and your insurance authorizes payment for the repairs, the only payment due will be your Deductible and Betterment if applicable. If your insurance company denies the claim for any reason or for all other customer/self- pay repairs, full payment is due upon completion of your vehicle's repairs. No vehicle will be released without full payment; provided however, that we will with your express prior written authorization pursue payment from your insurance company. Acceptable forms of payment include: Insurance check endorsed by all party payees; Local Cashier Check; Cash; and MasterCard or Visa, up to $2000.00 limit. There will be a 3% fee on all transactions over $2000.\n\nSupplements: During the course of repairs, additional or hidden damage not included in the initial Estimate of Repairs or the Final Estimate of Repairs may be found. In such cases, repairs to your vehicle may be stopped until a representative from your insurance company has the opportunity to inspect the additional damage; and an estimate of the additional cost of repairing same has been generated and provided to you and your insurance company. Repairs will not continue until we have written authorization to proceed.\n\nTheft &amp; Vandalism Claims: It is the responsibility of the Owner customer to discuss damage from a theft or vandalism directly with your insurance company. We only repair the damage claimed and adjusted, and are not responsible to repair any damage not acknowledged by the insurer as included in the insurance claim. Theft and vandalism repairs may take longer as they often require special order parts not commonly stocked.\n\nCancellation of Repairs or Total loss: If for any reason your vehicle is not repaired, or if you decide to cancel the authorized repairs the following charges (collectively “cancellation charges”) may apply: $           Pullout fee; $        Per diem storage fee until vehicle is removed from our premises; $        Per hour diagnostic, teardown and repair labor charges for work already completed; restocking fee of up to       % of retail cost of any parts ordered. Such cancellation charges will be due and payable at the time of removal of the vehicle from our premises.",
+      "type": "text",
+      "layout": {
+        "row": "Row_024o3st",
+        "columns": null
+      },
+      "id": "Field_17ttddj"
+    },
+    {
+      "values": [
+        {
+          "label": "I acknowledge that I have read and agree to the terms and conditions set forth above.",
+          "value": "yes"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1sft05g",
+        "columns": null
+      },
+      "id": "Field_195hsdi",
+      "key": "acknowledgement",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "I have read and understand the foregoing agreement",
+          "value": "yes"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1sewjfg",
+        "columns": null
+      },
+      "id": "Field_1u5gm8e",
+      "key": "agreement",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "FNOL_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_16vel9d">{
+  "components": [
+    {
+      "label": "Policy Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_08rm7x4",
+        "columns": null
+      },
+      "id": "Field_15iimd0",
+      "key": "policyNumber"
+    },
+    {
+      "subtype": "datetime",
+      "dateLabel": "Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0qyk3pp",
+        "columns": null
+      },
+      "id": "Field_0qz9fsc",
+      "key": "incidentDateTime",
+      "timeLabel": "Time",
+      "timeSerializingFormat": "utc_offset",
+      "timeInterval": 30,
+      "description": "Date and Time of the incident",
+      "disabled": false,
+      "use24h": false,
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0vhlhhl",
+      "key": "vehicleOwnerFirstName",
+      "description": "Vehicle Owner Name"
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02uqy79",
+        "columns": null
+      },
+      "id": "Field_0jgqveb",
+      "key": "vehicleOwnerLastName"
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_16v5ckb",
+        "columns": null
+      },
+      "id": "Field_04xbj8n",
+      "key": "vehicleOwnerPhoneNumber",
+      "description": "Vehicle Owner Phone Number"
+    },
+    {
+      "values": [
+        {
+          "label": "Insured",
+          "value": "insured"
+        },
+        {
+          "label": "Uninsured",
+          "value": "uninsured"
+        }
+      ],
+      "label": "Vehicle Owner Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_1uuoc76",
+        "columns": null
+      },
+      "id": "Field_0z0c7pb",
+      "key": "vehicleOwnerType"
+    },
+    {
+      "label": "Surveyor Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1un0f69",
+        "columns": null
+      },
+      "id": "Field_0caxxx9",
+      "key": "surveyorName"
+    },
+    {
+      "label": "Surveyor Mobile Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_145dimd",
+        "columns": null
+      },
+      "id": "Field_0zsgkab",
+      "key": "surveyorMobile"
+    },
+    {
+      "label": "Accident Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1p42xkp",
+        "columns": null
+      },
+      "id": "Field_1x8baum",
+      "key": "accidentLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Police Report",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0tfrq8v",
+        "columns": null
+      },
+      "id": "Field_1cq6yp4",
+      "key": "policeReport",
+      "defaultValue": "&lt;none&gt;"
+    },
+    {
+      "label": "Police Report Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0j89vjo",
+        "columns": null
+      },
+      "id": "Field_1kmh9xw",
+      "key": "policeReportNumber",
+      "conditional": {
+        "hide": "=policeReport = \"no\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Motorbike",
+          "value": "motorbike"
+        },
+        {
+          "label": "Car",
+          "value": "car"
+        },
+        {
+          "label": "Lorry",
+          "value": "lorry"
+        },
+        {
+          "label": "Bus",
+          "value": "bus"
+        },
+        {
+          "label": "Auto Rickshaw",
+          "value": "auto"
+        }
+      ],
+      "label": "Vehicle Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0kwgzoi",
+        "columns": null
+      },
+      "id": "Field_1s2g9u2",
+      "key": "vehicleType"
+    },
+    {
+      "values": [
+        {
+          "label": "Hit from Behind",
+          "value": "Hit from Behind"
+        },
+        {
+          "label": "Left Turn",
+          "value": "Left Turn"
+        },
+        {
+          "label": "Right Turn",
+          "value": "Right Turn"
+        },
+        {
+          "label": "Side Swipe",
+          "value": "Side Swipe"
+        },
+        {
+          "label": "Fixed Object",
+          "value": "Fixed Object"
+        },
+        {
+          "label": "Burn",
+          "value": "Burn"
+        },
+        {
+          "label": "Others ",
+          "value": "Others"
+        }
+      ],
+      "label": "Type of Accident",
+      "type": "select",
+      "layout": {
+        "row": "Row_1fzlvl3",
+        "columns": null
+      },
+      "id": "Field_10y16i9",
+      "key": "accidentType",
+      "searchable": false
+    },
+    {
+      "label": "License Plate",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_00222si",
+        "columns": null
+      },
+      "id": "Field_1xfynei",
+      "key": "licensePlate"
+    },
+    {
+      "label": "Vehicle Model",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0pot8iy",
+        "columns": null
+      },
+      "id": "Field_1rv8kia",
+      "key": "vehicleModel"
+    },
+    {
+      "values": [
+        {
+          "label": "Front",
+          "value": "Front"
+        },
+        {
+          "label": "Rear",
+          "value": "Rear"
+        },
+        {
+          "label": "Left Side",
+          "value": "Left Side"
+        },
+        {
+          "label": "Right Side",
+          "value": "Right Side"
+        }
+      ],
+      "label": "Point of Impact",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qsuhsm",
+        "columns": null
+      },
+      "id": "Field_0x55z1q",
+      "key": "pointOfImpact"
+    },
+    {
+      "label": "Vehicle Color",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0iqa1fk",
+        "columns": null
+      },
+      "id": "Field_1olmzqy",
+      "key": "color",
+      "appearance": {}
+    },
+    {
+      "label": "Vehicle Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ewjrp8",
+        "columns": null
+      },
+      "id": "Field_1cmrr9c",
+      "key": "vehicleLocation"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Permission to Move",
+      "type": "select",
+      "layout": {
+        "row": "Row_0zkykid",
+        "columns": null
+      },
+      "id": "Field_1bmtrso",
+      "key": "movePermission"
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Driveable ??",
+      "type": "select",
+      "layout": {
+        "row": "Row_16g1wgd",
+        "columns": null
+      },
+      "id": "Field_1ukhcoz",
+      "key": "driveCondition"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Today's Date",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_189ifit",
+        "columns": null
+      },
+      "id": "Field_12wn98w",
+      "key": "todayDate",
+      "disallowPassedDates": true,
+      "properties": {}
+    }
+  ],
+  "type": "default",
+  "id": "Claim_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_00sebmi">{
+  "components": [
+    {
+      "text": "# Manual Verification \n# Report",
+      "type": "text",
+      "layout": {
+        "row": "Row_11u7wjd",
+        "columns": null
+      },
+      "id": "Field_11xjji0"
+    },
+    {
+      "text": "Do you approve the claim authenticity?",
+      "type": "text",
+      "layout": {
+        "row": "Row_09zmb0r",
+        "columns": null
+      },
+      "id": "Field_1c6qqyl"
+    },
+    {
+      "values": [
+        {
+          "label": "Approved",
+          "value": "Approved"
+        },
+        {
+          "label": "Rejected",
+          "value": "Rejected"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_11s56hd",
+        "columns": null
+      },
+      "id": "Field_0zo9abb",
+      "key": "verification"
+    }
+  ],
+  "type": "default",
+  "id": "Manual_Verification_Form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_2ere0i4">{
+  "components": [
+    {
+      "text": "# Vehicle Insurance Claim Portal",
+      "type": "text",
+      "layout": {
+        "row": "Row_0a0vaw0",
+        "columns": null
+      },
+      "id": "Field_0i0a3a0"
+    },
+    {
+      "label": "Enter the OTP that you received over mail",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ezx8s5",
+        "columns": null
+      },
+      "id": "Field_1hda8nm",
+      "key": "userEnteredOtp"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0w29yil",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_0nqdrbw">
+      <bpmn:lane id="Lane_Garage" name="Garage">
+        <bpmn:flowNodeRef>Activity_FNOLClaim</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_097jeqe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0w3wdns</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_04ipuiv</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_11g7cu5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_003p8x7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1lqd5m7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0rbenwz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_043donf</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Surveyor" name="Surveyor">
+        <bpmn:flowNodeRef>Gateway_0k06scz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0j19n0g</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1hlw9gr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_04zc91q</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0l4a6a7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_08ihq37</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1174t4e</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_05e0wia</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1065i60</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0ezvyr5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_11oa024</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_ProductExpert" name="Product Expert">
+        <bpmn:flowNodeRef>Gateway_DuplicityCheck</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_Duplicity</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ManualVerification</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_ValidityCheck</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ValidityCheck</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1ff100t</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_02f8fdk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_SplitUser</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_AssignSurveyor</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_NotifySurveyor</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_MergeUser</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_GenerateClaimForm</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_NotifyRegistration</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0fjw2bk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_NotifyDecline</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1s4qanr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_RegisterInBank</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_RetrieveSurveyor</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1cx7jy9</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0sfoh51</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Customer" name="Customer">
+        <bpmn:flowNodeRef>Activity_1901d5a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_StartProcess</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_FNOL</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_13ru00t</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:userTask id="Activity_FNOLClaim" name="Claim FNOL notification">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:output source="=null" target="validity" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ToFNOLClaim</bpmn:incoming>
+      <bpmn:outgoing>Flow_ToCheckDuplicates</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="Gateway_0k06scz">
+      <bpmn:incoming>Flow_0tmpb09</bpmn:incoming>
+      <bpmn:outgoing>Flow_08rbt0w</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0zpxr3p</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_CheckDuplicateGateway" sourceRef="Activity_Duplicity" targetRef="Gateway_DuplicityCheck" />
+    <bpmn:sequenceFlow id="Flow_0sy0nc0" name="No" sourceRef="Gateway_DuplicityCheck" targetRef="Gateway_1ff100t">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=duplicity = "no"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_13utj38" name="Yes" sourceRef="Gateway_DuplicityCheck" targetRef="Activity_ManualVerification">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=duplicity = "yes"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0yry0yq" sourceRef="Gateway_ValidityCheck" targetRef="Activity_Duplicity">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=validity ="true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0cjhxtr" sourceRef="Activity_ManualVerification" targetRef="Gateway_02f8fdk" />
+    <bpmn:sequenceFlow id="Flow_1mctdnm" sourceRef="Activity_ValidityCheck" targetRef="Gateway_ValidityCheck" />
+    <bpmn:sequenceFlow id="Flow_16iy9fe" sourceRef="Gateway_ValidityCheck" targetRef="Gateway_1s4qanr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=validity = "false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_ToCheckDuplicates" sourceRef="Activity_FNOLClaim" targetRef="Activity_ValidityCheck" />
+    <bpmn:sequenceFlow id="Flow_1mc1sw0" sourceRef="Gateway_02f8fdk" targetRef="Gateway_1ff100t">
+      <bpmn:extensionElements />
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=verification = "Approved"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_09vqejk" sourceRef="Gateway_1ff100t" targetRef="Activity_RegisterInBank" />
+    <bpmn:sequenceFlow id="Flow_1t2tzu2" sourceRef="Gateway_02f8fdk" targetRef="Gateway_1s4qanr">
+      <bpmn:extensionElements />
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=verification = "Rejected"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0ql8976" sourceRef="Activity_RegisterInBank" targetRef="Gateway_SplitUser" />
+    <bpmn:sequenceFlow id="Flow_0s89xzm" sourceRef="Gateway_SplitUser" targetRef="Activity_AssignSurveyor" />
+    <bpmn:sequenceFlow id="Flow_08m3r0g" sourceRef="Gateway_SplitUser" targetRef="Activity_GenerateClaimForm" />
+    <bpmn:sequenceFlow id="Flow_0vkq7z4" sourceRef="Gateway_SplitUser" targetRef="Activity_NotifyRegistration" />
+    <bpmn:sequenceFlow id="Flow_1l94nev" sourceRef="Activity_AssignSurveyor" targetRef="Activity_RetrieveSurveyor" />
+    <bpmn:sequenceFlow id="Flow_0j1hj0k" sourceRef="Activity_RetrieveSurveyor" targetRef="Activity_NotifySurveyor" />
+    <bpmn:sequenceFlow id="Flow_1k0e3za" sourceRef="Activity_NotifySurveyor" targetRef="Gateway_MergeUser" />
+    <bpmn:sequenceFlow id="Flow_1gx7p3h" sourceRef="Activity_GenerateClaimForm" targetRef="Gateway_MergeUser" />
+    <bpmn:sequenceFlow id="Flow_0x07m9f" sourceRef="Activity_NotifyRegistration" targetRef="Gateway_MergeUser" />
+    <bpmn:sequenceFlow id="Flow_1fp2xez" sourceRef="Gateway_MergeUser" targetRef="Activity_0sfoh51" />
+    <bpmn:sequenceFlow id="Flow_129mk44" sourceRef="Activity_NotifyDecline" targetRef="Event_0fjw2bk" />
+    <bpmn:sequenceFlow id="Flow_0illuis" sourceRef="Activity_1cx7jy9" targetRef="Activity_1901d5a" />
+    <bpmn:sequenceFlow id="Flow_0hw17i0" sourceRef="Activity_1901d5a" targetRef="Activity_097jeqe" />
+    <bpmn:sequenceFlow id="Flow_1c3j2z2" sourceRef="Activity_0sfoh51" targetRef="Activity_1cx7jy9" />
+    <bpmn:sequenceFlow id="Flow_ToFNOLClaim" sourceRef="Activity_FNOL" targetRef="Activity_FNOLClaim" />
+    <bpmn:sequenceFlow id="Flow_0tmpb09" sourceRef="Activity_097jeqe" targetRef="Gateway_0k06scz" />
+    <bpmn:sequenceFlow id="Flow_0ad46cu" sourceRef="Event_StartProcess" targetRef="Activity_FNOL" />
+    <bpmn:sequenceFlow id="Flow_1q65fuz" sourceRef="Gateway_1065i60" targetRef="Activity_1hlw9gr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=documentValid = "true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_08rbt0w" sourceRef="Gateway_0k06scz" targetRef="Activity_0j19n0g" />
+    <bpmn:sequenceFlow id="Flow_0c97jec" sourceRef="Activity_0j19n0g" targetRef="Gateway_1065i60" />
+    <bpmn:sequenceFlow id="Flow_0rzyrtb" sourceRef="Gateway_1065i60" targetRef="Activity_04zc91q">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=documentValid = "false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0gtiioi" sourceRef="Activity_04zc91q" targetRef="Event_0l4a6a7" />
+    <bpmn:sequenceFlow id="Flow_0o39x4c" sourceRef="Gateway_1s4qanr" targetRef="Activity_NotifyDecline" />
+    <bpmn:userTask id="Activity_097jeqe" name="Upload the customer documents to the repairer portal">
+      <bpmn:incoming>Flow_0hw17i0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tmpb09</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:subProcess id="Activity_0sfoh51">
+      <bpmn:incoming>Flow_1fp2xez</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c3j2z2</bpmn:outgoing>
+      <bpmn:startEvent id="Event_1aj08ue">
+        <bpmn:outgoing>Flow_1s860pk</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:sequenceFlow id="Flow_1s860pk" sourceRef="Event_1aj08ue" targetRef="Gateway_1jrlder" />
+      <bpmn:sequenceFlow id="Flow_1695oz0" sourceRef="Activity_18u4mtl" targetRef="Activity_1wojru6" />
+      <bpmn:exclusiveGateway id="Gateway_0x2np1n">
+        <bpmn:incoming>Flow_1gh3s2s</bpmn:incoming>
+        <bpmn:outgoing>Flow_004ue1g</bpmn:outgoing>
+        <bpmn:outgoing>Flow_1n0tcal</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_1gh3s2s" sourceRef="Activity_18ziid3" targetRef="Gateway_0x2np1n" />
+      <bpmn:endEvent id="Event_1t6bvg0">
+        <bpmn:incoming>Flow_004ue1g</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_004ue1g" sourceRef="Gateway_0x2np1n" targetRef="Event_1t6bvg0">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=otpValid = "true"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_0gjq2f6" sourceRef="Activity_1wojru6" targetRef="Activity_0fctkjr" />
+      <bpmn:sequenceFlow id="Flow_1556yyd" sourceRef="Activity_0fctkjr" targetRef="Activity_18ziid3" />
+      <bpmn:serviceTask id="Activity_18u4mtl" name="Generate OTP">
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="generateOTP" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1kz98ek</bpmn:incoming>
+        <bpmn:outgoing>Flow_1695oz0</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="Activity_1wojru6" name="Mail the OTP to the customer" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+          <zeebe:ioMapping>
+            <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+            <zeebe:input source="Product Expert" target="from.name" />
+            <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+            <zeebe:input source="Customer" target="to.name" />
+            <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+            <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+            <zeebe:input source="d-a5b14189383f4da1a6858d01e65fffbc" target="template.id" />
+            <zeebe:input source="={&#10;  firstName : vehicleOwnerFirstName,&#10;  lastName : vehicleOwnerLastName,&#10;  generatedOtp : generatedOtp&#10;}" target="template.data" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1695oz0</bpmn:incoming>
+        <bpmn:outgoing>Flow_0gjq2f6</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:userTask id="Activity_0fctkjr" name="Submit OTP">
+        <bpmn:extensionElements>
+          <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_2ere0i4" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0gjq2f6</bpmn:incoming>
+        <bpmn:outgoing>Flow_1556yyd</bpmn:outgoing>
+      </bpmn:userTask>
+      <bpmn:serviceTask id="Activity_18ziid3" name="Check for the validity of the OTP">
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="validateOTP" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1556yyd</bpmn:incoming>
+        <bpmn:outgoing>Flow_1gh3s2s</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:exclusiveGateway id="Gateway_1jrlder">
+        <bpmn:incoming>Flow_1s860pk</bpmn:incoming>
+        <bpmn:incoming>Flow_1n0tcal</bpmn:incoming>
+        <bpmn:outgoing>Flow_1kz98ek</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_1kz98ek" sourceRef="Gateway_1jrlder" targetRef="Activity_18u4mtl" />
+      <bpmn:sequenceFlow id="Flow_1n0tcal" sourceRef="Gateway_0x2np1n" targetRef="Gateway_1jrlder">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=otpValid = "false"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+    </bpmn:subProcess>
+    <bpmn:userTask id="Activity_1cx7jy9" name="Send reminder mails to customer to upload documents">
+      <bpmn:extensionElements>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1c3j2z2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0illuis</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_RetrieveSurveyor" name="Retrieve Surveyor Details">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="retrieveSurveyor" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1l94nev</bpmn:incoming>
+      <bpmn:outgoing>Flow_0j1hj0k</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_RegisterInBank" name="Register in the banks">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="persistFnol" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_09vqejk</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ql8976</bpmn:outgoing>
+      <bpmn:property id="Property_1dtn2z8" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_068zcfe">
+        <bpmn:sourceRef>DataStoreReference_1kw2bq2</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1dtn2z8</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_1s4qanr">
+      <bpmn:incoming>Flow_1t2tzu2</bpmn:incoming>
+      <bpmn:incoming>Flow_16iy9fe</bpmn:incoming>
+      <bpmn:outgoing>Flow_0o39x4c</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Activity_NotifyDecline" name="Decline notice shared with the customer" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Product Expert" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Customer" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="  d-9a64ed2706d84961ac734b86a8e7ff07" target="template.id" />
+          <zeebe:input source="={&#10;  firstName : vehicleOwnerFirstName,&#10;  lastName : vehicleOwnerLastName&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0o39x4c</bpmn:incoming>
+      <bpmn:outgoing>Flow_129mk44</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_FNOL" name="Register First Notice Of Loss">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_1mqer8b" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ad46cu</bpmn:incoming>
+      <bpmn:outgoing>Flow_ToFNOLClaim</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="Event_StartProcess">
+      <bpmn:outgoing>Flow_0ad46cu</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_1901d5a" name="Upload required documents">
+      <bpmn:incoming>Flow_0illuis</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hw17i0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0fjw2bk">
+      <bpmn:incoming>Flow_129mk44</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_NotifyRegistration" name="Registration notice shared with the customer" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Product Expert" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Customer" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-a722d93bd81a4f8783e5fc2b5d5398d9 " target="template.id" />
+          <zeebe:input source="={&#10;  firstName : vehicleOwnerFirstName,&#10;  lastName : vehicleOwnerLastName&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0vkq7z4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0x07m9f</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_GenerateClaimForm" name="Generate Claim Form">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_16vel9d" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_08m3r0g</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gx7p3h</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="Gateway_MergeUser" name="Merge">
+      <bpmn:incoming>Flow_1gx7p3h</bpmn:incoming>
+      <bpmn:incoming>Flow_1k0e3za</bpmn:incoming>
+      <bpmn:incoming>Flow_0x07m9f</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fp2xez</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask id="Activity_NotifySurveyor" name="Send intimation mail to the surveyor" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Product Expert" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Surveyor" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source=" d-04a3133621b8498ebb5cbcc173c91d52" target="template.id" />
+          <zeebe:input source="={&#10; accidentLocation : accidentLocation,&#10; policyNumber : policyNumber,&#10; surveyorName : surveyorName,&#10; vehicleType : vehicleType,&#10; vehicleLocation : vehicleLocation&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0j1hj0k</bpmn:incoming>
+      <bpmn:outgoing>Flow_1k0e3za</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:businessRuleTask id="Activity_AssignSurveyor" name="Assignment of Surveyor">
+      <bpmn:extensionElements>
+        <zeebe:calledDecision decisionId="Decision_SurveyorAssignment" resultVariable="surveyorId" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=vehicleType" target="VehicleType" />
+          <zeebe:output source="=surveyorId" target="surveyorId" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0s89xzm</bpmn:incoming>
+      <bpmn:outgoing>Flow_1l94nev</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:parallelGateway id="Gateway_SplitUser" name="Split">
+      <bpmn:incoming>Flow_0ql8976</bpmn:incoming>
+      <bpmn:outgoing>Flow_0s89xzm</bpmn:outgoing>
+      <bpmn:outgoing>Flow_08m3r0g</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0vkq7z4</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:exclusiveGateway id="Gateway_02f8fdk">
+      <bpmn:incoming>Flow_0cjhxtr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mc1sw0</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1t2tzu2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_1ff100t">
+      <bpmn:incoming>Flow_0sy0nc0</bpmn:incoming>
+      <bpmn:incoming>Flow_1mc1sw0</bpmn:incoming>
+      <bpmn:outgoing>Flow_09vqejk</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Activity_ValidityCheck" name="Check the validity of the policy">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="validityCheck" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ToCheckDuplicates</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mctdnm</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_ValidityCheck">
+      <bpmn:incoming>Flow_1mctdnm</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yry0yq</bpmn:outgoing>
+      <bpmn:outgoing>Flow_16iy9fe</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_ManualVerification" name="Manual verification of claim authenticity">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_00sebmi" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_13utj38</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cjhxtr</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_Duplicity" name="Check for duplicates">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_0reo82u" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0yry0yq</bpmn:incoming>
+      <bpmn:outgoing>Flow_CheckDuplicateGateway</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_DuplicityCheck" name="Duplicate check">
+      <bpmn:incoming>Flow_CheckDuplicateGateway</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sy0nc0</bpmn:outgoing>
+      <bpmn:outgoing>Flow_13utj38</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0j19n0g" name="Verification of customer documents">
+      <bpmn:incoming>Flow_08rbt0w</bpmn:incoming>
+      <bpmn:outgoing>Flow_0c97jec</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_1hlw9gr" name="Whitelisted for Pre Auth">
+      <bpmn:incoming>Flow_1q65fuz</bpmn:incoming>
+      <bpmn:outgoing>Flow_19sz6ab</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_04zc91q" name="Claim rejection notice shared with the customer">
+      <bpmn:incoming>Flow_0rzyrtb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gtiioi</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0l4a6a7" name="Claim rejected">
+      <bpmn:incoming>Flow_0gtiioi</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0zpxr3p" sourceRef="Gateway_0k06scz" targetRef="Activity_05e0wia" />
+    <bpmn:sequenceFlow id="Flow_10zkd6i" sourceRef="Activity_05e0wia" targetRef="Gateway_08ihq37" />
+    <bpmn:parallelGateway id="Gateway_08ihq37">
+      <bpmn:incoming>Flow_10zkd6i</bpmn:incoming>
+      <bpmn:outgoing>Flow_0t70x7e</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0cej1tw</bpmn:outgoing>
+      <bpmn:outgoing>Flow_16bonwm</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0njm07u</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_0t70x7e" sourceRef="Gateway_08ihq37" targetRef="Activity_0ezvyr5" />
+    <bpmn:sequenceFlow id="Flow_0cej1tw" sourceRef="Gateway_08ihq37" targetRef="Activity_11oa024" />
+    <bpmn:sequenceFlow id="Flow_16bonwm" sourceRef="Gateway_08ihq37" targetRef="Gateway_0w3wdns" />
+    <bpmn:sequenceFlow id="Flow_0njm07u" sourceRef="Gateway_08ihq37" targetRef="Activity_13ru00t" />
+    <bpmn:sequenceFlow id="Flow_017hjbl" sourceRef="Gateway_0w3wdns" targetRef="Activity_043donf" />
+    <bpmn:parallelGateway id="Gateway_0w3wdns">
+      <bpmn:incoming>Flow_16bonwm</bpmn:incoming>
+      <bpmn:outgoing>Flow_017hjbl</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1lsag49</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_1lsag49" sourceRef="Gateway_0w3wdns" targetRef="Activity_0rbenwz" />
+    <bpmn:sequenceFlow id="Flow_1uwytlu" sourceRef="Activity_0rbenwz" targetRef="Gateway_04ipuiv" />
+    <bpmn:parallelGateway id="Gateway_04ipuiv">
+      <bpmn:incoming>Flow_1uwytlu</bpmn:incoming>
+      <bpmn:incoming>Flow_064ydr3</bpmn:incoming>
+      <bpmn:outgoing>Flow_13r8a4f</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_064ydr3" sourceRef="Activity_043donf" targetRef="Gateway_04ipuiv" />
+    <bpmn:sequenceFlow id="Flow_13r8a4f" sourceRef="Gateway_04ipuiv" targetRef="Gateway_1174t4e" />
+    <bpmn:sequenceFlow id="Flow_07tpocf" sourceRef="Activity_11oa024" targetRef="Gateway_1174t4e" />
+    <bpmn:sequenceFlow id="Flow_0zj2one" sourceRef="Activity_0ezvyr5" targetRef="Gateway_1174t4e" />
+    <bpmn:sequenceFlow id="Flow_01z0dfp" sourceRef="Activity_13ru00t" targetRef="Gateway_1174t4e" />
+    <bpmn:parallelGateway id="Gateway_1174t4e">
+      <bpmn:incoming>Flow_07tpocf</bpmn:incoming>
+      <bpmn:incoming>Flow_0zj2one</bpmn:incoming>
+      <bpmn:incoming>Flow_01z0dfp</bpmn:incoming>
+      <bpmn:incoming>Flow_13r8a4f</bpmn:incoming>
+      <bpmn:outgoing>Flow_1atmtkc</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_1atmtkc" sourceRef="Gateway_1174t4e" targetRef="Activity_1lqd5m7" />
+    <bpmn:sequenceFlow id="Flow_0xezn5x" sourceRef="Activity_1lqd5m7" targetRef="Gateway_11g7cu5" />
+    <bpmn:sequenceFlow id="Flow_19sz6ab" sourceRef="Activity_1hlw9gr" targetRef="Gateway_11g7cu5" />
+    <bpmn:parallelGateway id="Gateway_11g7cu5">
+      <bpmn:incoming>Flow_0xezn5x</bpmn:incoming>
+      <bpmn:incoming>Flow_19sz6ab</bpmn:incoming>
+      <bpmn:outgoing>Flow_1w2piun</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:endEvent id="Event_003p8x7">
+      <bpmn:incoming>Flow_1w2piun</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1w2piun" sourceRef="Gateway_11g7cu5" targetRef="Event_003p8x7" />
+    <bpmn:userTask id="Activity_05e0wia" name="Virtual / In Person Survey">
+      <bpmn:incoming>Flow_0zpxr3p</bpmn:incoming>
+      <bpmn:outgoing>Flow_10zkd6i</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_13ru00t" name="Live streaming to the IHA">
+      <bpmn:incoming>Flow_0njm07u</bpmn:incoming>
+      <bpmn:outgoing>Flow_01z0dfp</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_1lqd5m7" name="Prepare an estimate on repairer app">
+      <bpmn:incoming>Flow_1atmtkc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xezn5x</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1065i60">
+      <bpmn:incoming>Flow_0c97jec</bpmn:incoming>
+      <bpmn:outgoing>Flow_0rzyrtb</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1q65fuz</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0ezvyr5" name="IHA In Person Survey">
+      <bpmn:incoming>Flow_0t70x7e</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zj2one</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_11oa024" name="Live streaming to the customer / repairer">
+      <bpmn:incoming>Flow_0cej1tw</bpmn:incoming>
+      <bpmn:outgoing>Flow_07tpocf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0rbenwz" name="Live streaming to the IHA">
+      <bpmn:incoming>Flow_1lsag49</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uwytlu</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_043donf" name="Upload photos /  videos to the repairer portal">
+      <bpmn:incoming>Flow_017hjbl</bpmn:incoming>
+      <bpmn:outgoing>Flow_064ydr3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:dataStoreReference id="DataStoreReference_1kw2bq2" name="FNOL Persistence" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_InsuranceProcess">
+      <bpmndi:BPMNShape id="Participant_02ouzcz_di" bpmnElement="Participant_Chola" isHorizontal="true">
+        <dc:Bounds x="139" y="80" width="7329" height="2010" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_00jk70v_di" bpmnElement="Lane_Garage" isHorizontal="true">
+        <dc:Bounds x="169" y="80" width="7299" height="300" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0fjvfcn_di" bpmnElement="Lane_Surveyor" isHorizontal="true">
+        <dc:Bounds x="169" y="380" width="7299" height="810" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0t58jpl_di" bpmnElement="Lane_Customer" isHorizontal="true">
+        <dc:Bounds x="169" y="1810" width="7299" height="280" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1wob9v7_di" bpmnElement="Lane_ProductExpert" isHorizontal="true">
+        <dc:Bounds x="169" y="1190" width="7299" height="620" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_09uu8oa_di" bpmnElement="Gateway_DuplicityCheck" isMarkerVisible="true">
+        <dc:Bounds x="1165" y="1315" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1151" y="1293" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gf5cau_di" bpmnElement="Activity_Duplicity">
+        <dc:Bounds x="1010" y="1300" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1qq3p71_di" bpmnElement="Activity_ManualVerification">
+        <dc:Bounds x="1250" y="1410" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1ghe001_di" bpmnElement="Gateway_ValidityCheck" isMarkerVisible="true">
+        <dc:Bounds x="875" y="1315" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wgro6w_di" bpmnElement="Activity_ValidityCheck">
+        <dc:Bounds x="690" y="1300" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1ff100t_di" bpmnElement="Gateway_1ff100t" isMarkerVisible="true">
+        <dc:Bounds x="1405" y="1315" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_02f8fdk_di" bpmnElement="Gateway_02f8fdk" isMarkerVisible="true">
+        <dc:Bounds x="1405" y="1425" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1dd839h_di" bpmnElement="Gateway_SplitUser">
+        <dc:Bounds x="1935" y="1425" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1978" y="1423" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1te0ffi_di" bpmnElement="Activity_AssignSurveyor">
+        <dc:Bounds x="2080" y="1230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_19pviaj_di" bpmnElement="Activity_NotifySurveyor">
+        <dc:Bounds x="2600" y="1230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0n21x6z_di" bpmnElement="Gateway_MergeUser">
+        <dc:Bounds x="2735" y="1425" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2774" y="1413" width="32" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_081lb5b_di" bpmnElement="Activity_GenerateClaimForm">
+        <dc:Bounds x="2330" y="1410" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0g9xkan_di" bpmnElement="Activity_NotifyRegistration">
+        <dc:Bounds x="2330" y="1540" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0fjw2bk_di" bpmnElement="Event_0fjw2bk">
+        <dc:Bounds x="1832" y="1542" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01p9jro_di" bpmnElement="Activity_1901d5a">
+        <dc:Bounds x="4750" y="1900" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0f0ntzn_di" bpmnElement="Activity_FNOLClaim">
+        <dc:Bounds x="470" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1960853_di" bpmnElement="Event_StartProcess">
+        <dc:Bounds x="212" y="1912" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tdu4lx_di" bpmnElement="Activity_FNOL">
+        <dc:Bounds x="310" y="1890" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0kdh6n9_di" bpmnElement="Gateway_0k06scz">
+        <dc:Bounds x="5265" y="785" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0hqka0f" bpmnElement="Activity_NotifyDecline">
+        <dc:Bounds x="1620" y="1520" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1s4qanr_di" bpmnElement="Gateway_1s4qanr" isMarkerVisible="true">
+        <dc:Bounds x="1485" y="1535" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_11wgetz_di" bpmnElement="Activity_RegisterInBank">
+        <dc:Bounds x="1620" y="1300" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xhwbe7_di" bpmnElement="Activity_RetrieveSurveyor">
+        <dc:Bounds x="2330" y="1230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ju18zr_di" bpmnElement="Activity_097jeqe">
+        <dc:Bounds x="4990" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dpyhpt_di" bpmnElement="Activity_1cx7jy9">
+        <dc:Bounds x="4480" y="1575" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1065i60_di" bpmnElement="Gateway_1065i60" isMarkerVisible="true">
+        <dc:Bounds x="5695" y="955" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pw5oyk_di" bpmnElement="Activity_0j19n0g">
+        <dc:Bounds x="5370" y="940" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cwmgbh_di" bpmnElement="Activity_1hlw9gr">
+        <dc:Bounds x="5860" y="810" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1hjjqaz_di" bpmnElement="Activity_04zc91q">
+        <dc:Bounds x="5860" y="1070" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0l4a6a7_di" bpmnElement="Event_0l4a6a7">
+        <dc:Bounds x="6063" y="1092" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="6046" y="1135" width="71" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1r8k7jk_di" bpmnElement="Gateway_08ihq37">
+        <dc:Bounds x="5525" y="615" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0uoanjk_di" bpmnElement="Gateway_0w3wdns">
+        <dc:Bounds x="5525" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1ogypxd_di" bpmnElement="Gateway_04ipuiv">
+        <dc:Bounds x="6075" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ul1sei_di" bpmnElement="Gateway_1174t4e">
+        <dc:Bounds x="6335" y="615" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0x0qoa3_di" bpmnElement="Gateway_11g7cu5">
+        <dc:Bounds x="6935" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_003p8x7_di" bpmnElement="Event_003p8x7">
+        <dc:Bounds x="7212" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1i7xtrf_di" bpmnElement="Activity_043donf">
+        <dc:Bounds x="5860" y="110" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bupsxy_di" bpmnElement="Activity_0rbenwz">
+        <dc:Bounds x="5860" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1697ryw_di" bpmnElement="Activity_11oa024">
+        <dc:Bounds x="5860" y="450" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14zvvcn_di" bpmnElement="Activity_0ezvyr5">
+        <dc:Bounds x="5860" y="600" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0c8ze1f_di" bpmnElement="Activity_05e0wia">
+        <dc:Bounds x="5370" y="600" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kqfsq4_di" bpmnElement="Activity_13ru00t">
+        <dc:Bounds x="5860" y="1930" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1y5j6gu_di" bpmnElement="Activity_1lqd5m7">
+        <dc:Bounds x="6610" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_1kw2bq2_di" bpmnElement="DataStoreReference_1kw2bq2">
+        <dc:Bounds x="1695" y="1415" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1677" y="1472" width="90" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16unq7b_di" bpmnElement="Activity_0sfoh51" isExpanded="true">
+        <dc:Bounds x="2950" y="1240" width="1360" height="750" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1aj08ue_di" bpmnElement="Event_1aj08ue">
+        <dc:Bounds x="2981" y="1522" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0x2np1n_di" bpmnElement="Gateway_0x2np1n" isMarkerVisible="true">
+        <dc:Bounds x="4135" y="1515" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1t6bvg0_di" bpmnElement="Event_1t6bvg0">
+        <dc:Bounds x="4242" y="1522" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_043li64_di" bpmnElement="Activity_18u4mtl">
+        <dc:Bounds x="3230" y="1500" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1g7pk9i_di" bpmnElement="Activity_1wojru6">
+        <dc:Bounds x="3410" y="1500" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15mcs01_di" bpmnElement="Activity_0fctkjr">
+        <dc:Bounds x="3690" y="1840" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1elrdux_di" bpmnElement="Activity_18ziid3">
+        <dc:Bounds x="3980" y="1500" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1jrlder_di" bpmnElement="Gateway_1jrlder" isMarkerVisible="true">
+        <dc:Bounds x="3085" y="1515" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1s860pk_di" bpmnElement="Flow_1s860pk">
+        <di:waypoint x="3017" y="1540" />
+        <di:waypoint x="3085" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gh3s2s_di" bpmnElement="Flow_1gh3s2s">
+        <di:waypoint x="4080" y="1540" />
+        <di:waypoint x="4135" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_004ue1g_di" bpmnElement="Flow_004ue1g">
+        <di:waypoint x="4185" y="1540" />
+        <di:waypoint x="4242" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n0tcal_di" bpmnElement="Flow_1n0tcal">
+        <di:waypoint x="4160" y="1515" />
+        <di:waypoint x="4160" y="1380" />
+        <di:waypoint x="3110" y="1380" />
+        <di:waypoint x="3110" y="1515" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1kz98ek_di" bpmnElement="Flow_1kz98ek">
+        <di:waypoint x="3135" y="1540" />
+        <di:waypoint x="3230" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1695oz0_di" bpmnElement="Flow_1695oz0">
+        <di:waypoint x="3330" y="1540" />
+        <di:waypoint x="3410" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gjq2f6_di" bpmnElement="Flow_0gjq2f6">
+        <di:waypoint x="3510" y="1540" />
+        <di:waypoint x="3590" y="1540" />
+        <di:waypoint x="3590" y="1880" />
+        <di:waypoint x="3690" y="1880" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1556yyd_di" bpmnElement="Flow_1556yyd">
+        <di:waypoint x="3790" y="1880" />
+        <di:waypoint x="3885" y="1880" />
+        <di:waypoint x="3885" y="1540" />
+        <di:waypoint x="3980" y="1540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uj810u_di" bpmnElement="Flow_CheckDuplicateGateway">
+        <di:waypoint x="1110" y="1340" />
+        <di:waypoint x="1165" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sy0nc0_di" bpmnElement="Flow_0sy0nc0">
+        <di:waypoint x="1215" y="1340" />
+        <di:waypoint x="1405" y="1340" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1335" y="1322" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13utj38_di" bpmnElement="Flow_13utj38">
+        <di:waypoint x="1190" y="1365" />
+        <di:waypoint x="1190" y="1450" />
+        <di:waypoint x="1250" y="1450" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1197" y="1405" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yry0yq_di" bpmnElement="Flow_0yry0yq">
+        <di:waypoint x="925" y="1340" />
+        <di:waypoint x="1010" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cjhxtr_di" bpmnElement="Flow_0cjhxtr">
+        <di:waypoint x="1350" y="1450" />
+        <di:waypoint x="1405" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mctdnm_di" bpmnElement="Flow_1mctdnm">
+        <di:waypoint x="790" y="1340" />
+        <di:waypoint x="875" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16iy9fe_di" bpmnElement="Flow_16iy9fe">
+        <di:waypoint x="900" y="1365" />
+        <di:waypoint x="900" y="1680" />
+        <di:waypoint x="1510" y="1680" />
+        <di:waypoint x="1510" y="1585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t5t6cg_di" bpmnElement="Flow_ToCheckDuplicates">
+        <di:waypoint x="570" y="220" />
+        <di:waypoint x="630" y="220" />
+        <di:waypoint x="630" y="1340" />
+        <di:waypoint x="690" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mc1sw0_di" bpmnElement="Flow_1mc1sw0">
+        <di:waypoint x="1430" y="1425" />
+        <di:waypoint x="1430" y="1365" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09vqejk_di" bpmnElement="Flow_09vqejk">
+        <di:waypoint x="1455" y="1340" />
+        <di:waypoint x="1620" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1t2tzu2_di" bpmnElement="Flow_1t2tzu2">
+        <di:waypoint x="1430" y="1475" />
+        <di:waypoint x="1430" y="1560" />
+        <di:waypoint x="1485" y="1560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ql8976_di" bpmnElement="Flow_0ql8976">
+        <di:waypoint x="1720" y="1340" />
+        <di:waypoint x="1810" y="1340" />
+        <di:waypoint x="1810" y="1450" />
+        <di:waypoint x="1935" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s89xzm_di" bpmnElement="Flow_0s89xzm">
+        <di:waypoint x="1960" y="1425" />
+        <di:waypoint x="1960" y="1270" />
+        <di:waypoint x="2080" y="1270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08m3r0g_di" bpmnElement="Flow_08m3r0g">
+        <di:waypoint x="1985" y="1450" />
+        <di:waypoint x="2330" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vkq7z4_di" bpmnElement="Flow_0vkq7z4">
+        <di:waypoint x="1960" y="1475" />
+        <di:waypoint x="1960" y="1580" />
+        <di:waypoint x="2330" y="1580" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1l94nev_di" bpmnElement="Flow_1l94nev">
+        <di:waypoint x="2180" y="1270" />
+        <di:waypoint x="2330" y="1270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0j1hj0k_di" bpmnElement="Flow_0j1hj0k">
+        <di:waypoint x="2430" y="1270" />
+        <di:waypoint x="2600" y="1270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k0e3za_di" bpmnElement="Flow_1k0e3za">
+        <di:waypoint x="2700" y="1270" />
+        <di:waypoint x="2760" y="1270" />
+        <di:waypoint x="2760" y="1425" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gx7p3h_di" bpmnElement="Flow_1gx7p3h">
+        <di:waypoint x="2430" y="1450" />
+        <di:waypoint x="2735" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0x07m9f_di" bpmnElement="Flow_0x07m9f">
+        <di:waypoint x="2430" y="1580" />
+        <di:waypoint x="2760" y="1580" />
+        <di:waypoint x="2760" y="1475" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fp2xez_di" bpmnElement="Flow_1fp2xez">
+        <di:waypoint x="2785" y="1450" />
+        <di:waypoint x="2950" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_129mk44_di" bpmnElement="Flow_129mk44">
+        <di:waypoint x="1720" y="1560" />
+        <di:waypoint x="1832" y="1560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0illuis_di" bpmnElement="Flow_0illuis">
+        <di:waypoint x="4580" y="1615" />
+        <di:waypoint x="4665" y="1615" />
+        <di:waypoint x="4665" y="1940" />
+        <di:waypoint x="4750" y="1940" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hw17i0_di" bpmnElement="Flow_0hw17i0">
+        <di:waypoint x="4850" y="1940" />
+        <di:waypoint x="4935" y="1940" />
+        <di:waypoint x="4935" y="220" />
+        <di:waypoint x="4990" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c3j2z2_di" bpmnElement="Flow_1c3j2z2">
+        <di:waypoint x="4310" y="1615" />
+        <di:waypoint x="4480" y="1615" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0e56del_di" bpmnElement="Flow_ToFNOLClaim">
+        <di:waypoint x="410" y="1930" />
+        <di:waypoint x="440" y="1930" />
+        <di:waypoint x="440" y="220" />
+        <di:waypoint x="470" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tmpb09_di" bpmnElement="Flow_0tmpb09">
+        <di:waypoint x="5090" y="220" />
+        <di:waypoint x="5175" y="220" />
+        <di:waypoint x="5175" y="810" />
+        <di:waypoint x="5265" y="810" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ad46cu_di" bpmnElement="Flow_0ad46cu">
+        <di:waypoint x="248" y="1930" />
+        <di:waypoint x="310" y="1930" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1q65fuz_di" bpmnElement="Flow_1q65fuz">
+        <di:waypoint x="5720" y="955" />
+        <di:waypoint x="5720" y="850" />
+        <di:waypoint x="5860" y="850" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08rbt0w_di" bpmnElement="Flow_08rbt0w">
+        <di:waypoint x="5290" y="835" />
+        <di:waypoint x="5290" y="980" />
+        <di:waypoint x="5370" y="980" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0c97jec_di" bpmnElement="Flow_0c97jec">
+        <di:waypoint x="5470" y="980" />
+        <di:waypoint x="5695" y="980" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0rzyrtb_di" bpmnElement="Flow_0rzyrtb">
+        <di:waypoint x="5720" y="1005" />
+        <di:waypoint x="5720" y="1110" />
+        <di:waypoint x="5860" y="1110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gtiioi_di" bpmnElement="Flow_0gtiioi">
+        <di:waypoint x="5960" y="1110" />
+        <di:waypoint x="6063" y="1110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0o39x4c_di" bpmnElement="Flow_0o39x4c">
+        <di:waypoint x="1535" y="1560" />
+        <di:waypoint x="1620" y="1560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zpxr3p_di" bpmnElement="Flow_0zpxr3p">
+        <di:waypoint x="5290" y="785" />
+        <di:waypoint x="5290" y="640" />
+        <di:waypoint x="5370" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10zkd6i_di" bpmnElement="Flow_10zkd6i">
+        <di:waypoint x="5470" y="640" />
+        <di:waypoint x="5525" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t70x7e_di" bpmnElement="Flow_0t70x7e">
+        <di:waypoint x="5575" y="640" />
+        <di:waypoint x="5860" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cej1tw_di" bpmnElement="Flow_0cej1tw">
+        <di:waypoint x="5550" y="615" />
+        <di:waypoint x="5550" y="490" />
+        <di:waypoint x="5860" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16bonwm_di" bpmnElement="Flow_16bonwm">
+        <di:waypoint x="5550" y="615" />
+        <di:waypoint x="5550" y="315" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0njm07u_di" bpmnElement="Flow_0njm07u">
+        <di:waypoint x="5550" y="665" />
+        <di:waypoint x="5550" y="1970" />
+        <di:waypoint x="5860" y="1970" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_017hjbl_di" bpmnElement="Flow_017hjbl">
+        <di:waypoint x="5550" y="265" />
+        <di:waypoint x="5550" y="150" />
+        <di:waypoint x="5860" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lsag49_di" bpmnElement="Flow_1lsag49">
+        <di:waypoint x="5575" y="290" />
+        <di:waypoint x="5860" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uwytlu_di" bpmnElement="Flow_1uwytlu">
+        <di:waypoint x="5960" y="290" />
+        <di:waypoint x="6075" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_064ydr3_di" bpmnElement="Flow_064ydr3">
+        <di:waypoint x="5960" y="150" />
+        <di:waypoint x="6100" y="150" />
+        <di:waypoint x="6100" y="265" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13r8a4f_di" bpmnElement="Flow_13r8a4f">
+        <di:waypoint x="6125" y="290" />
+        <di:waypoint x="6360" y="290" />
+        <di:waypoint x="6360" y="615" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07tpocf_di" bpmnElement="Flow_07tpocf">
+        <di:waypoint x="5960" y="490" />
+        <di:waypoint x="6360" y="490" />
+        <di:waypoint x="6360" y="615" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zj2one_di" bpmnElement="Flow_0zj2one">
+        <di:waypoint x="5960" y="640" />
+        <di:waypoint x="6335" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01z0dfp_di" bpmnElement="Flow_01z0dfp">
+        <di:waypoint x="5960" y="1970" />
+        <di:waypoint x="6360" y="1970" />
+        <di:waypoint x="6360" y="665" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1atmtkc_di" bpmnElement="Flow_1atmtkc">
+        <di:waypoint x="6385" y="640" />
+        <di:waypoint x="6490" y="640" />
+        <di:waypoint x="6490" y="220" />
+        <di:waypoint x="6610" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xezn5x_di" bpmnElement="Flow_0xezn5x">
+        <di:waypoint x="6710" y="220" />
+        <di:waypoint x="6935" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19sz6ab_di" bpmnElement="Flow_19sz6ab">
+        <di:waypoint x="5960" y="850" />
+        <di:waypoint x="6960" y="850" />
+        <di:waypoint x="6960" y="245" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1w2piun_di" bpmnElement="Flow_1w2piun">
+        <di:waypoint x="6985" y="220" />
+        <di:waypoint x="7212" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_068zcfe_di" bpmnElement="DataInputAssociation_068zcfe">
+        <di:waypoint x="1702" y="1415" />
+        <di:waypoint x="1677" y="1380" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

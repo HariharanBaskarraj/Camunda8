@@ -1,0 +1,32 @@
+{
+  "components": [
+    {
+      "text": "# Vehicle Insurance Claim Portal",
+      "type": "text",
+      "layout": {
+        "row": "Row_0a0vaw0",
+        "columns": null
+      },
+      "id": "Field_0i0a3a0"
+    },
+    {
+      "label": "Enter the OTP that you received over mail",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ezx8s5",
+        "columns": null
+      },
+      "id": "Field_1hda8nm",
+      "key": "userEnteredOtp"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0w29yil",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "schemaVersion": 8
+}

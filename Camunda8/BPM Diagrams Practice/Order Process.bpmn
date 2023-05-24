@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_05nlr8c" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.10.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <bpmn:process id="OrderProcess" name="Order Process" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_2hof1aj">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Vegetarian",
+          "value": "Veg"
+        },
+        {
+          "label": "Non - Vegetarian",
+          "value": "Non Veg"
+        },
+        {
+          "label": "Both",
+          "value": "Combined"
+        }
+      ],
+      "label": "Select Food Choice",
+      "type": "select",
+      "layout": {
+        "row": "Row_05mx42e",
+        "columns": null
+      },
+      "id": "Field_07dt165",
+      "key": "foodChoice",
+      "validate": {
+        "required": false
+      },
+      "properties": {}
+    },
+    {
+      "values": [
+        {
+          "label": "Dosa",
+          "value": "Dosa"
+        },
+        {
+          "label": "Chapathi",
+          "value": "Chapathi"
+        },
+        {
+          "label": "Butter Naan",
+          "value": "Butter Naan"
+        },
+        {
+          "label": "Paneer Butter Masala",
+          "value": "Paneer Butter Masala"
+        },
+        {
+          "label": "Chili Baby Corn",
+          "value": "Chili Baby Corn"
+        }
+      ],
+      "label": "Select Veg Food Choices",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0wcxcli",
+        "columns": null
+      },
+      "id": "Field_0qwg5t8",
+      "key": "vegFoods",
+      "conditional": {
+        "hide": "=foodChoice = \"Non Veg\""
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Chicken 65",
+          "value": "Chicken 65"
+        },
+        {
+          "label": "Malai Chicken Tikka",
+          "value": "Malai Chicken Tikka"
+        },
+        {
+          "label": "Chicken Biryani",
+          "value": "Chicken Biryani"
+        },
+        {
+          "label": "Mutton Chukka",
+          "value": "Mutton Chukka"
+        },
+        {
+          "label": "Honey Chilli Chicken",
+          "value": "Honey Chilli Chicken"
+        }
+      ],
+      "label": "Select Non-Veg Food Choices",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0wcxcli",
+        "columns": null
+      },
+      "id": "Field_0imfd68",
+      "key": "nonvegFoods",
+      "conditional": {
+        "hide": "=foodChoice = \"Veg\""
+      }
+    }
+  ],
+  "type": "default",
+  "id": "OrderConditionalForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.10.0"
+  },
+  "schemaVersion": 8
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_Order" name="Order Process Started">
+      <bpmn:outgoing>Flow_0toa9vl</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0toa9vl" sourceRef="StartEvent_Order" targetRef="Activity_SelectFoodChoice" />
+    <bpmn:sequenceFlow id="Flow_0kw4yyn" sourceRef="Activity_SelectFoodChoice" targetRef="Activity_SendOrderedMail" />
+    <bpmn:endEvent id="EndEvent_Ordered" name="Food Delivered">
+      <bpmn:incoming>Flow_0chnu05</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_SelectFoodChoice" name="Select Food Choice">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_2hof1aj" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0toa9vl</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kw4yyn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_SendOrderedMail" name="Send order Confirmation" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Hariharan Foods" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Order Customer" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-c3006bcf304c4e4b9146731067829777" target="template.id" />
+          <zeebe:input source="={&#10;  foodChoice: foodChoice,&#10;  vegFoods: vegFoods,&#10;  nonvegFoods: nonvegFoods&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0kw4yyn</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zigjud</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0chnu05" sourceRef="Activity_SendDeliveryConfirmation" targetRef="EndEvent_Ordered" />
+    <bpmn:serviceTask id="Activity_SendDeliveryConfirmation" name="Send delivery Confirmation" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Hariharan Foods" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Order Customer" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-dccd517428174e64be0021a33f3d8f16" target="template.id" />
+          <zeebe:input source="={&#10;  foodChoice: foodChoice,&#10;  vegFoods: vegFoods,&#10;  nonvegFoods: nonvegFoods&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0hdzt6n</bpmn:incoming>
+      <bpmn:outgoing>Flow_0chnu05</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:subProcess id="Activity_1xzvu14">
+      <bpmn:incoming>Flow_0zigjud</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hdzt6n</bpmn:outgoing>
+      <bpmn:sequenceFlow id="Flow_1ja9e6c" sourceRef="Event_08f78jm" targetRef="Activity_Processed" />
+      <bpmn:endEvent id="EndEvent_Delivery" name="Proceeded to Delivery">
+        <bpmn:incoming>Flow_180n01w</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_180n01w" sourceRef="Activity_Processed" targetRef="EndEvent_Delivery" />
+      <bpmn:manualTask id="Activity_Processed" name="Order Processed to Delivery">
+        <bpmn:incoming>Flow_1ja9e6c</bpmn:incoming>
+        <bpmn:outgoing>Flow_180n01w</bpmn:outgoing>
+      </bpmn:manualTask>
+      <bpmn:startEvent id="Event_08f78jm">
+        <bpmn:outgoing>Flow_1ja9e6c</bpmn:outgoing>
+      </bpmn:startEvent>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0zigjud" sourceRef="Activity_SendOrderedMail" targetRef="Activity_1xzvu14" />
+    <bpmn:sequenceFlow id="Flow_0hdzt6n" sourceRef="Activity_1xzvu14" targetRef="Activity_SendDeliveryConfirmation" />
+  </bpmn:process>
+  <bpmn:message id="Message_0902kgh" name="Message_orderStatus">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=orderStatus" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="OrderProcess">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_Order">
+        <dc:Bounds x="179" y="169" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="161" y="212" width="72" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0mwu54q_di" bpmnElement="Activity_SelectFoodChoice">
+        <dc:Bounds x="270" y="147" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rgd40s_di" bpmnElement="Activity_SendOrderedMail">
+        <dc:Bounds x="430" y="147" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14m50ga_di" bpmnElement="Activity_SendDeliveryConfirmation">
+        <dc:Bounds x="1030" y="147" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_10q4ige_di" bpmnElement="EndEvent_Ordered">
+        <dc:Bounds x="1202" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1183" y="203" width="75" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xzvu14_di" bpmnElement="Activity_1xzvu14" isExpanded="true">
+        <dc:Bounds x="610" y="80" width="340" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02cn5vk_di" bpmnElement="EndEvent_Delivery">
+        <dc:Bounds x="882" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="869" y="205" width="66" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ssp8so_di" bpmnElement="Activity_Processed">
+        <dc:Bounds x="720" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ofc8fi_di" bpmnElement="Event_08f78jm">
+        <dc:Bounds x="630" y="162" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ja9e6c_di" bpmnElement="Flow_1ja9e6c">
+        <di:waypoint x="666" y="180" />
+        <di:waypoint x="720" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_180n01w_di" bpmnElement="Flow_180n01w">
+        <di:waypoint x="820" y="180" />
+        <di:waypoint x="882" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0toa9vl_di" bpmnElement="Flow_0toa9vl">
+        <di:waypoint x="215" y="187" />
+        <di:waypoint x="270" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kw4yyn_di" bpmnElement="Flow_0kw4yyn">
+        <di:waypoint x="370" y="187" />
+        <di:waypoint x="430" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zigjud_di" bpmnElement="Flow_0zigjud">
+        <di:waypoint x="530" y="187" />
+        <di:waypoint x="610" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0chnu05_di" bpmnElement="Flow_0chnu05">
+        <di:waypoint x="1130" y="180" />
+        <di:waypoint x="1202" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hdzt6n_di" bpmnElement="Flow_0hdzt6n">
+        <di:waypoint x="950" y="187" />
+        <di:waypoint x="1030" y="187" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

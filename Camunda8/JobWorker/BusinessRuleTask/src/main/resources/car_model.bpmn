@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1y7s3dm" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.10.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="carBookingProcess" name="Car Booking Process" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_3nq68ab">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "SUV",
+          "value": "SUV"
+        },
+        {
+          "label": "Budget",
+          "value": "Budget"
+        }
+      ],
+      "label": "Select Car Type",
+      "type": "select",
+      "id": "Field_0bp7ncu",
+      "key": "carType",
+      "defaultValue": "&lt;none&gt;",
+      "disabled": false
+    },
+    {
+      "values": [
+        {
+          "label": "Red",
+          "value": "red"
+        },
+        {
+          "label": "Yellow",
+          "value": "yellow"
+        },
+        {
+          "label": "Green",
+          "value": "green"
+        },
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "White",
+          "value": "white"
+        }
+      ],
+      "label": "Select Car Colour",
+      "type": "select",
+      "id": "Field_01nqtd9",
+      "key": "carColour"
+    }
+  ],
+  "type": "default",
+  "id": "Form_CarModelSelection",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="Process Started">
+      <bpmn:outgoing>Flow_0rrinkm</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0rrinkm" sourceRef="StartEvent_1" targetRef="Activity_0l3pclt" />
+    <bpmn:userTask id="Activity_0l3pclt" name="Select car model">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_3nq68ab" />
+        <zeebe:assignmentDefinition assignee="demo" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0rrinkm</bpmn:incoming>
+      <bpmn:outgoing>Flow_0p61o8s</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0901p3f">
+      <bpmn:incoming>Flow_0p61o8s</bpmn:incoming>
+      <bpmn:outgoing>Flow_0rd41o0</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0ymdgtx</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0p61o8s" sourceRef="Activity_0l3pclt" targetRef="Gateway_0901p3f" />
+    <bpmn:sequenceFlow id="Flow_0rd41o0" name="SUV" sourceRef="Gateway_0901p3f" targetRef="Activity_14ua1vc">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=carType = "SUV"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0ymdgtx" name="Budget" sourceRef="Gateway_0901p3f" targetRef="Activity_15dykoq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=carType = "Budget"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:businessRuleTask id="Activity_14w1rql" name="Check for Availability">
+      <bpmn:extensionElements>
+        <zeebe:calledDecision decisionId="Decision_ModelSelection" resultVariable="availability" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=carType" target="CarType" />
+          <zeebe:input source="=carColour" target="CarColour" />
+          <zeebe:output source="=availability" target="Availability" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1b26xx9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0bgf7qj</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_0bgf7qj" sourceRef="Activity_14w1rql" targetRef="Activity_1kv42xi" />
+    <bpmn:serviceTask id="Activity_0go763h" name="Send mail confirmation" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="secrets.SENDGRID_API_KEY" target="apiKey" />
+          <zeebe:input source="Car Sales" target="from.name" />
+          <zeebe:input source="hariharan.b@acheron-tech.com" target="from.email" />
+          <zeebe:input source="Customer Hariharan" target="to.name" />
+          <zeebe:input source="hariharanbaskarraj@gmail.com" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-d047b06c47454e358950cd5441a8faa6" target="template.id" />
+          <zeebe:input source="={&#10;  carModel: carType,&#10;  carColour: carColour,&#10;  availability: Availability&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_08hz9gb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ejjq3g</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_0fm9zgv" name="Process Completed">
+      <bpmn:incoming>Flow_0ejjq3g</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0ejjq3g" sourceRef="Activity_0go763h" targetRef="Event_0fm9zgv" />
+    <bpmn:sequenceFlow id="Flow_0x5ffas" sourceRef="Activity_15dykoq" targetRef="Gateway_1klx4ba" />
+    <bpmn:exclusiveGateway id="Gateway_1klx4ba">
+      <bpmn:incoming>Flow_0x5ffas</bpmn:incoming>
+      <bpmn:incoming>Flow_0dk8mzw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1b26xx9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0dk8mzw" sourceRef="Activity_14ua1vc" targetRef="Gateway_1klx4ba" />
+    <bpmn:sequenceFlow id="Flow_1b26xx9" sourceRef="Gateway_1klx4ba" targetRef="Activity_14w1rql" />
+    <bpmn:sequenceFlow id="Flow_08hz9gb" sourceRef="Activity_1kv42xi" targetRef="Activity_0go763h" />
+    <bpmn:serviceTask id="Activity_14ua1vc" name="Selected SUV">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="selectedSUV" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0rd41o0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dk8mzw</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_15dykoq" name="Selected Budget">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="selectedBudget" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ymdgtx</bpmn:incoming>
+      <bpmn:outgoing>Flow_0x5ffas</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:businessRuleTask id="Activity_1kv42xi" name="Save Booking Details">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="saveBookingDetails" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0bgf7qj</bpmn:incoming>
+      <bpmn:outgoing>Flow_08hz9gb</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="carBookingProcess">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="202" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13fm4qd_di" bpmnElement="Activity_0l3pclt">
+        <dc:Bounds x="270" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0901p3f_di" bpmnElement="Gateway_0901p3f" isMarkerVisible="true">
+        <dc:Bounds x="425" y="152" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1r6q5cz_di" bpmnElement="Activity_14w1rql">
+        <dc:Bounds x="790" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kvts78_di" bpmnElement="Activity_0go763h">
+        <dc:Bounds x="1100" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0fm9zgv_di" bpmnElement="Event_0fm9zgv">
+        <dc:Bounds x="1282" y="159" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1273" y="202" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1klx4ba_di" bpmnElement="Gateway_1klx4ba" isMarkerVisible="true">
+        <dc:Bounds x="655" y="152" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05ebt25_di" bpmnElement="Activity_14ua1vc">
+        <dc:Bounds x="530" y="40" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_095aop3_di" bpmnElement="Activity_15dykoq">
+        <dc:Bounds x="530" y="240" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jaxxm1_di" bpmnElement="Activity_1kv42xi">
+        <dc:Bounds x="950" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0rrinkm_di" bpmnElement="Flow_0rrinkm">
+        <di:waypoint x="215" y="177" />
+        <di:waypoint x="270" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0p61o8s_di" bpmnElement="Flow_0p61o8s">
+        <di:waypoint x="370" y="177" />
+        <di:waypoint x="425" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0rd41o0_di" bpmnElement="Flow_0rd41o0">
+        <di:waypoint x="450" y="152" />
+        <di:waypoint x="450" y="80" />
+        <di:waypoint x="530" y="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="453" y="113" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ymdgtx_di" bpmnElement="Flow_0ymdgtx">
+        <di:waypoint x="450" y="202" />
+        <di:waypoint x="450" y="280" />
+        <di:waypoint x="530" y="280" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="452" y="233" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bgf7qj_di" bpmnElement="Flow_0bgf7qj">
+        <di:waypoint x="890" y="177" />
+        <di:waypoint x="950" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ejjq3g_di" bpmnElement="Flow_0ejjq3g">
+        <di:waypoint x="1200" y="177" />
+        <di:waypoint x="1282" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0x5ffas_di" bpmnElement="Flow_0x5ffas">
+        <di:waypoint x="630" y="280" />
+        <di:waypoint x="680" y="280" />
+        <di:waypoint x="680" y="202" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dk8mzw_di" bpmnElement="Flow_0dk8mzw">
+        <di:waypoint x="630" y="80" />
+        <di:waypoint x="680" y="80" />
+        <di:waypoint x="680" y="152" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1b26xx9_di" bpmnElement="Flow_1b26xx9">
+        <di:waypoint x="705" y="177" />
+        <di:waypoint x="790" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08hz9gb_di" bpmnElement="Flow_08hz9gb">
+        <di:waypoint x="1050" y="177" />
+        <di:waypoint x="1100" y="177" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

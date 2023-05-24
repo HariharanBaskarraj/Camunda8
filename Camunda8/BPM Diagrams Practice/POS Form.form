@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "text": "# POS Salepoint",
+      "type": "text",
+      "id": "Field_16yjhj8"
+    },
+    {
+      "label": "Order special instructions, if any...",
+      "type": "textarea",
+      "id": "Field_0jsnc98",
+      "key": "field_1bpoxyz"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0m8pulm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}

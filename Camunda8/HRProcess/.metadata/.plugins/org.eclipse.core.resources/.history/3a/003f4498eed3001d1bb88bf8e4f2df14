@@ -1,0 +1,32 @@
+package com.preboarding.main;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import io.camunda.zeebe.client.api.response.ProcessInstanceEvent;
+import io.camunda.zeebe.spring.client.EnableZeebeClient;
+import io.camunda.zeebe.spring.client.annotation.Deployment;
+import io.camunda.zeebe.spring.client.lifecycle.ZeebeClientLifecycle;
+
+@SpringBootApplication
+@EnableZeebeClient
+@Deployment(resources = "classpath:preboarding.bpmn")
+public class PreboardingApplication {
+
+	@Autowired
+	private ZeebeClientLifecycle client;
+
+	public static void main(String[] args) {
+		SpringApplication.run(PreboardingApplication.class, args);
+	}
+	final ProcessInstanceEvent event =
+	        client
+	            .newCreateInstanceCommand()
+	            .bpmnProcessId("preboarding")
+	            .latestVersion()
+//	            .variables(variables)
+	            .send()
+	            .join();
+
+}

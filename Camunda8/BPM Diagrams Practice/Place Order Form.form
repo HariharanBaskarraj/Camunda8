@@ -1,0 +1,58 @@
+{
+  "components": [
+    {
+      "text": "# Placing your Order...",
+      "type": "text",
+      "id": "Field_08pqi42"
+    },
+    {
+      "values": [
+        {
+          "label": "Dosa",
+          "value": "dosa"
+        },
+        {
+          "label": "Idli",
+          "value": "Idli"
+        },
+        {
+          "label": "Poori",
+          "value": "poori"
+        },
+        {
+          "label": "Chapathi",
+          "value": "chapathi"
+        },
+        {
+          "label": "Pongal",
+          "value": "pongal"
+        },
+        {
+          "label": "Vada",
+          "value": "vada"
+        }
+      ],
+      "label": "Checklist",
+      "type": "checklist",
+      "id": "Field_0y30let",
+      "key": "dishOptions",
+      "disabled": true
+    },
+    {
+      "action": "submit",
+      "label": "Place Order",
+      "type": "button",
+      "id": "Field_1cs3edg",
+      "key": "field_1duq4px"
+    }
+  ],
+  "type": "default",
+  "id": "orderForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "schemaVersion": 7
+}

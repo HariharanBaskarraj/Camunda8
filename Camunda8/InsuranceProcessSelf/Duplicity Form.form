@@ -1,0 +1,51 @@
+{
+  "components": [
+    {
+      "text": "# Chola Insurance",
+      "type": "text",
+      "layout": {
+        "row": "Row_0d6nuom",
+        "columns": null
+      },
+      "id": "Field_1nk9syb"
+    },
+    {
+      "text": "Please check for any duplicity of the claim with the existing requests and report here.",
+      "type": "text",
+      "layout": {
+        "row": "Row_05g6187",
+        "columns": null
+      },
+      "id": "Field_13zr3pf"
+    },
+    {
+      "values": [
+        {
+          "label": "New Claim request",
+          "value": "no"
+        },
+        {
+          "label": "Duplicate Claim request",
+          "value": "yes"
+        }
+      ],
+      "label": "Duplicity",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0c29ghu",
+        "columns": null
+      },
+      "id": "Field_1kg2ah5",
+      "key": "duplicity"
+    }
+  ],
+  "type": "default",
+  "id": "DuplicityForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.10.0"
+  },
+  "schemaVersion": 8
+}

@@ -1,0 +1,65 @@
+{
+  "components": [
+    {
+      "text": "# Review Request\n\nPlease review the following Annual \nLeave request.",
+      "type": "text",
+      "id": "Field_0g0c5ib"
+    },
+    {
+      "label": "Employee ID",
+      "type": "textfield",
+      "id": "Field_10x5g8u",
+      "key": "employeeId"
+    },
+    {
+      "label": "Start Date",
+      "type": "textfield",
+      "id": "Field_1ysyf0u",
+      "key": "startDate"
+    },
+    {
+      "label": "End Date",
+      "type": "textfield",
+      "id": "Field_164hmt9",
+      "key": "endDate"
+    },
+    {
+      "label": "Comment",
+      "type": "textfield",
+      "id": "Field_10hrsy1",
+      "key": "comment"
+    },
+    {
+      "values": [
+        {
+          "label": "Approved",
+          "value": "Approved"
+        },
+        {
+          "label": "Rejected",
+          "value": "Rejected"
+        },
+        {
+          "label": "Additional Information is required",
+          "value": "additional"
+        }
+      ],
+      "label": "Decision",
+      "type": "radio",
+      "id": "Field_144klpm",
+      "key": "decision",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "schemaVersion": 7,
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.9.0"
+  },
+  "type": "default",
+  "id": "ReviewRequestForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}
